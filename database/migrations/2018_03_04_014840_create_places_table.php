@@ -32,12 +32,12 @@ class CreatePlacesTable extends Migration
 
             $table->foreign('category_id')
                 ->references('id')
-                ->on('categorys')
+                ->on('categories')
                 ->onDelete('cascade');
 
             $table->foreign('prefecture_id')
                 ->references('id')
-                ->on('categorys')
+                ->on('prefectures')
                 ->onDelete('cascade');
         });
     }
