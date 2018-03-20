@@ -1,0 +1,74 @@
+.contact {
+    .ctn-contact {
+        text-align: center;
+        @include breakpoint(small-tablet) {
+            padding: 0 15px;
+        }
+        .infor-contact {
+            @include breakpoint(phone) {
+                display: none;
+            }
+            .item-infor {
+                @include breakpoint(small-tablet) {
+                    width: 100%;
+                    margin-bottom: 2%;
+                }
+                i {
+                    line-height: 60px;
+                    font-size: 25px;
+                    color: $color-white;
+                    @include breakpoint(small-tablet) {
+                        line-height: 55px;
+                        font-size: 20px;
+                    }
+                }
+                span {
+                    border: 1px solid $color-main;
+                    background: $color-main;
+                    border-radius: 50%;
+                    display: inline-block;
+                    width: 60px;
+                    @include breakpoint(small-tablet) {
+                        width: 55px;
+                    }
+                }
+                .text {
+                    line-height: 1.2;
+                    margin-top: 5%;
+                    @include breakpoint(small-tablet) {
+                        font-size: 13px;
+                        margin-top: 2%;
+                    }
+                    p {
+                        margin: 0;
+                    }
+                }
+            }
+        }
+        .message {
+            .title-mess {
+                margin: 4% 0;
+                h3 {
+                    font-weight: bold;
+                    font-size: 20px;
+                    @include breakpoint(phone) {
+                        font-size: 18px;
+                    }
+                }
+            }
+            .ctn-mess {
+                .item-ctn-mess {
+                    @include breakpoint(small-tablet) {
+                        width: 100%;
+                    }
+                }
+                .textarea {
+                    padding-top: 1%;
+                }
+                textarea {
+                    resize: none;
+                }
+            }
+        }
+    }
+}

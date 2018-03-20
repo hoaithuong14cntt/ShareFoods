@@ -1,0 +1,11 @@
+.view-more {
+    text-align: center;
+    margin-top: 3%;
+    .btn {
+        width: 20%;
+        @include breakpoint (phone) {
+            width: 32%;
+            font-size: 13px;
+        }
+    }
+}

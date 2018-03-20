@@ -1,0 +1,175 @@
+.user-profile {
+    background: url('../img/background/bg10.jpg') no-repeat;
+    background-position: center;
+    background-size: cover;
+    .ctn-user {
+        .item-ctn {
+            .wrp {
+                /* background: $color-white;*/
+                background: rgba(255, 255, 255, 0.1);
+                padding: 20px 15px;
+                border: 1px solid $color-gray;
+                -webkit-box-shadow: 3px 2px 7px 0px;
+                box-shadow: 3px 2px 5px -2px;
+                @include breakpoint (tablet) {
+                    border: 0;
+                    -webkit-box-shadow: none;
+                    box-shadow: none;
+                }
+            }
+        }
+        .help-block {
+            color: #f9a7a5;
+        }
+        .edit {
+            margin: 0;
+        }
+
+        .avatar-features {
+            @include breakpoint (tablet) {
+                margin-bottom: 5%;
+            }
+            @include breakpoint (tablet) {
+                margin: 0;
+            }
+            .wrp {
+                @include breakpoint (tablet) {
+                    background: transparent;
+                }
+            }
+
+            .avatar {
+                .img {
+                    cursor: pointer;
+                    position: relative;
+                    border-radius: 50%;
+                    height: 124px;
+                    overflow: hidden;
+                    margin: 0 auto;
+                    border: 4px solid #c2c2c2;
+                    width: 124px;
+                    &:hover {
+                        .edit-avatar {
+                            -webkit-transition: .3s ease;
+                            transition: .3s ease;
+                            opacity: 1;
+                        }
+                    }
+                    img {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        -webkit-transform: scale(1, 1);
+                        transform: scale(1, 1);
+                    }
+
+                    .edit-avatar {
+                        opacity: 0;
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        right: 0;
+                        bottom: 0;
+                        background: rgba(0, 0, 0, 0.7);
+                        i {
+                            color: $color-white;
+                            position: absolute;
+                            top: 50%;
+                            left: 50%;
+                            -webkit-transform: translate(-50%, -50%);
+                            transform: translate(-50%, -50%);
+                        } // .file {
+                        //     color: $color-white;
+                        //     position: absolute;
+                        //     overflow: hidden;
+                        //     font-size: 14px;
+                        //     width: 100%;
+                        //     top: 0;
+                        //     left: 0;
+                        //     bottom: 0;
+                        //     right: 0;
+                        //     cursor: pointer;
+                        //     input {
+                        //         position: absolute;
+                        //         font-size: 50px;
+                        //         opacity: 0;
+                        //         right: 0;
+                        //         top: 0;
+                        //         bottom: 0;
+                        //         left: 0;
+                        //     }
+                        // }
+                    }
+                }
+            }
+
+            .features {
+                margin-top: 25px;
+                nav {
+                    @include breakpoint (tablet) {
+                        text-align: center;
+                    }
+                    ul {
+                        @include breakpoint (tablet) {
+                            display: inline-block;
+                        }
+                        @include breakpoint (phone) {
+                            width: 100%;
+                        }
+                        li {
+                            @include breakpoint (tablet) {
+                                float: left;
+                            }
+                            @include breakpoint (phone) {
+                                width: 33.333333%;
+                                font-size: 14px;
+                            }
+
+                            a,
+                            i {
+                                color: $color-white !important;
+                            }
+                            a {
+                                border-radius: 0 !important;
+                                &:hover {
+                                    -webkit-transition: .2s ease-in-out;
+                                    transition: .2s ease-in-out;
+                                    background: $color-hover !important;
+                                }
+                                @include breakpoint (phone) {
+                                    font-size: 0;
+                                }
+                                i {
+                                    padding-right: 10px;
+                                    @include breakpoint (phone) {
+                                        padding: 0;
+                                        font-size: 13px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .products {
+            .img-product {
+                -webkit-transition: .3s ease-in-out;
+                transition: .3s ease-in-out;
+                &:hover {
+                    .img {
+                        -webkit-transform: scale(4, 4) !important;
+                        transform: scale(4, 4) !important;
+                    }
+                    .hover-view {
+                        opacity: 1 !important;
+                    }
+                }
+            }
+        }
+        @import "page/user-profile/user-infor";
+        @import "page/user-profile/edit-pass";
+        @import "page/user-profile/user-saved";
+    }
+}

@@ -1,0 +1,190 @@
+.products {
+    .ctn-products {
+        .item-product {
+            margin-bottom: 5%;
+            padding: 15px;
+            border: 2px solid transparent;
+            @include breakpoint(tablet) {
+                margin-bottom: 8%;
+                &:nth-child(7) {
+                    display: none;
+                }
+                &:nth-child(8) {
+                    display: none;
+                }
+            }
+            @include breakpoint(small-tablet) {
+                margin-bottom: 4%;
+            }
+            @include breakpoint(mid-phone) {
+                width: 50%;
+                &:nth-child(5) {
+                    display: none;
+                }
+                &:nth-child(6) {
+                    display: none;
+                }
+            }
+            .wrp-item {
+                position: relative;
+                .img-product {
+                    position: relative;
+                    height: 0;
+                    padding-top: 125%;
+                    background: black;
+                    overflow: hidden;
+                    .img {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        -webkit-transform: scale(3, 3);
+                                transform: scale(3, 3);
+                        -webkit-transition: .3s ease-in-out;
+                        transition: .3s ease-in-out;
+                    }
+                    .hover-view {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        right: 0;
+                        bottom: 0;
+                        background: rgba(0, 0, 0, 0.7);
+                        opacity: 0;
+                        -webkit-transition: .2s ease-in-out;
+                        transition: .2s ease-in-out;
+                        .view {
+                            display: inline-block;
+                            border: 2px solid rgba(255, 255, 255, 0.6);
+                            background: $color-main;
+                            padding: 3% 4%;
+                            -webkit-transform: rotate(45deg);
+                                    transform: rotate(45deg);
+                            width: 40px;
+                            height: 40px;
+                            margin-top: 15%;
+                            margin-left: 43%;
+                            z-index: 2;
+                            @include breakpoint(tablet) {
+                                width: 35px;
+                                height: 35px;
+                                // padding: 3% 5%;
+                            }
+                            @include breakpoint(small-tablet) {
+                                margin-left: 40%;
+                            }
+                            @include breakpoint(phone) {
+                                background: transparent;
+                                border: 0;
+                            }
+                            a {
+                                display: block;
+                                margin-left: 0;
+                                -webkit-transform: rotate(-45deg);
+                                        transform: rotate(-45deg);
+                                color: $color-white;
+                                &:hover {
+                                    i {
+                                        color: $color-white !important;
+                                        @include breakpoint(phone) {
+                                            color: $color-hover !important;
+                                        }
+                                    }
+                                }
+                                i {
+                                    vertical-align: super;
+                                    @include breakpoint(tablet) {
+                                        font-size: 13px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                .ctn-product {
+                    /*Khác*/
+                    background: white;
+                    overflow: hidden;
+                    text-align: center;
+                    padding: 5% 3%;
+                    .info {
+                        h3,
+                        p,
+                        a {
+                            margin: 0;
+                            color: $color-gray3;
+                            white-space: nowrap;
+                            overflow: hidden;
+                            text-overflow: ellipsis;
+                        }
+                        h3 {
+                            padding-bottom: 3%;
+                            font-size: 20px;
+                            font-family: $openSans-semibold;
+                            @include breakpoint(small-desktop) {
+                                font-size: 17px;
+                            }
+                            @include breakpoint(tablet) {
+                                font-size: 16px;
+                            }
+                            @include breakpoint(small-tablet) {
+                                font-size: 15px;
+                            }
+                            @include breakpoint(mid-phone) {
+                                font-size: 13px;
+                            }
+                        }
+                        p {
+                            padding: 3% 0;
+                            @include breakpoint(tablet) {
+                                font-size: 13px;
+                            }
+                            @include breakpoint(small-tablet) {
+                                font-size: 12px;
+                            }
+                            @include breakpoint(phone) {
+                                font-size: 12px;
+                            }
+                            @include breakpoint(mid-phone) {
+                                font-size: 11px;
+                            }
+                        }
+                        a {
+                            &:hover {
+                                text-decoration: none;
+                                color: $color-hover;
+                            }
+                        }
+                        .address {
+                            font-size: 12px;
+                            color: $color-gray2;
+                            @include breakpoint(tablet) {
+                                font-size: 11px;
+                            }
+                            @include breakpoint(small-tablet) {
+                                font-size: 10px;
+                            }
+                        }
+                    }
+                    .parameter {
+                        margin-top: 8%;
+                        p {
+                            font-size: 11px;
+                            color: $color-orange3;
+                            @include breakpoint(phone) {
+                                font-size: px;
+                            }
+                        }
+                        i {
+                            font-size: 11px;
+                            padding-right: 5%;
+                        }
+                        div {
+                            padding: 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

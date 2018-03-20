@@ -1,0 +1,13 @@
+.all-products {
+    .features {
+        .item {
+            @include breakpoint (tablet) {
+                width: 50% !important;
+                float: left;
+            }
+            select {
+                border-color: transparent;
+            }
+        }
+    }
+}

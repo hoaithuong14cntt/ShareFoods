@@ -22,6 +22,7 @@ class CreatePlacesTable extends Migration
             $table->string('name');
             $table->text('description');
             $table->text('content');
+            $table->string('address');
             $table->boolean('is_published')->default(true);
             $table->timestamps();
 

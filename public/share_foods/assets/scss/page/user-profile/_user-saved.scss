@@ -1,0 +1,19 @@
+.user-saved {
+    .wrp {
+        background: transparent;
+        border: 0;
+        padding: 0;
+        box-shadow: none;
+        .ctn-products {
+            .item-product {
+                padding: 0 15px;
+                display: inline-block !important;
+                .wrp-item {
+                    .img-product {
+                        padding-top: 70%;
+                    }
+                }
+            }
+        }
+    }
+}

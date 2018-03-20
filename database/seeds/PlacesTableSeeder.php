@@ -24,6 +24,7 @@ class PlacesTableSeeder extends Seeder
                 'image' => $faker->image('public/storage/', 400, 300, null, false),
                 'description' => $faker->text,
                 'content' => $faker->text,
+                'address' => $faker->address,
                 'is_published' => true,
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),

@@ -1,0 +1,62 @@
+.user-infor {
+    @include breakpoint (tablet) {
+        margin-top: 3%;
+    }
+
+    .form-infor {
+        label {
+            font-weight: bold;
+            @include breakpoint (small-tablet) {
+                margin-bottom: 1.5%;
+            }
+        }
+        .form-control,
+        label,
+        input,
+        p,
+        h4 {
+            color: $color-white;
+            &::placeholder {
+                color: $color-white;
+                opacity: 0.5;
+            }
+        }
+        .name {
+            label {
+                @include breakpoint (small-tablet) {
+                    display: none;
+                }
+            }
+            .show-name {
+                h4 {
+                    font-size: 20px;
+                    font-weight: bold;
+                }
+                @include breakpoint (small-tablet) {
+                    width: 100%;
+                    text-align: center;
+                    color: $color-main;
+                }
+            }
+        }
+        .username {
+            label {
+                @include breakpoint (small-tablet) {
+                    float: left;
+                }
+            }
+            .show-username {
+
+                @include breakpoint (small-tablet) {
+                    float: left;
+                }
+            }
+        }
+        .first-name {}
+        .last-name {}
+        .email {}
+        .pass {}
+        .new-pass {}
+        .confirm-pass {}
+    }
+}

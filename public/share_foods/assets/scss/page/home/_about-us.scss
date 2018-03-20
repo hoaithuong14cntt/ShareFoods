@@ -1,0 +1,75 @@
+#aboutUs {
+    .img-product {
+        border-radius: 50%;
+        .img {
+            -webkit-transform: scale(1, 1);
+                    transform: scale(1, 1);
+        }
+    }
+    .class-three {
+        .img-product {
+            padding-top: 220px !important;
+            @include breakpoint (small-desktop) {
+                padding-top: 175.55px !important;
+            }
+        }
+    }
+    .class-two {
+        .img-product {
+            padding-top: 247.5px !important;
+            @include breakpoint (small-desktop) {
+                padding-top: 197.5px !important;
+            }
+        }
+    }
+    .item-product {
+        @include breakpoint (tablet) {
+            width: 20% !important;
+            .img-product {
+                padding-top: 100% !important;
+            }
+        }
+        @include breakpoint (small-tablet) {
+            padding: 0 1%;
+        }
+    }
+    .ctn-product {
+        .info {
+            p {
+                font-size: 14px;
+            }
+            @include breakpoint (phone) {
+                h3,
+                p {
+                    font-size: 12px;
+                }
+            }
+            @include breakpoint (mid-phone) {
+                h3,
+                p {
+                    font-size: 10px !important;
+                }
+                span {
+                    display: none;
+
+                }
+                .name1::after {
+                    content: "Quang";
+                }
+                .name2::after {
+                    content: "Sơn";
+                }
+                .name3::after {
+                    content: "Đạt";
+                }
+                .name4::after {
+                    content: "Thương";
+                }
+                .name5::after {
+                    content: "Hiếu";
+                }
+            }
+
+        }
+    }
+}

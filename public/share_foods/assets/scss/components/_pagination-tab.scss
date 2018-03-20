@@ -1,0 +1,34 @@
+.pagination-tab {
+    background: $color-main;
+    margin-bottom: 3%;
+    .breadcrumb {
+        background: transparent;
+        border-radius: 0;
+        padding: 15px;
+        margin: 0;
+        @include breakpoint (small-tablet) {
+            padding: 10px 15px;
+        }
+        li {
+            @include breakpoint (small-tablet) {
+                font-size: 14px;
+            }
+            @include breakpoint (mid-phone) {
+                font-size: 13px;
+            }
+        }
+        a {
+            color: $color-white;
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+    .breadcrumb>li+li::before {
+        color: $color-white;
+    }
+    .active {
+        color: $color-white;
+        font-weight: bold;
+    }
+}

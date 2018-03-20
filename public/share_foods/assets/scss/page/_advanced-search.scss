@@ -1,0 +1,42 @@
+.advanced-search {
+    .features {
+        margin: 0 !important;
+        .item-three {
+            @include breakpoint (tablet) {
+                width: 33.33333% !important;
+                float: left;
+            }
+            ul {
+                min-width: 100%;
+            }
+        }
+        .input-address {
+            @include breakpoint (tablet) {
+                width: 100% !important;
+            }
+        }
+        .btn {
+            width: 100%;
+        }
+        .city,
+        .type {
+            button {
+                background: $color-white;
+            }
+        }
+        .city {
+            .form-group {
+                select {
+                    @include breakpoint (tablet) {
+                        border-color: transparent;
+                    }
+                }
+            }
+        }
+        .button-search {
+            input {
+                border: 1px solid $color-hover;
+            }
+        }
+    }
+}
