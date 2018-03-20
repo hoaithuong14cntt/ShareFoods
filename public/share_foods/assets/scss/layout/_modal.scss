@@ -1,0 +1,291 @@
+.modal {
+    .modal-dialog {
+        .modal-content {
+            border-radius: 2px;
+        }
+        .wrp-ctn {
+            border-radius: 2px;
+            border-top: 4px solid $color-hover;
+            .modal-header {
+                border: 0;
+                .modal-title {
+                    text-transform: uppercase;
+                    text-align: center;
+                    font-size: 25px;
+                    font-weight: bold;
+                    @include breakpoint(mid-phone) {
+                        font-size: 20px;
+                    }
+                }
+            }
+            .modal-body {
+                form {
+                    a,
+                    p {
+                        font-size: 14px;
+                        color: $color-gray;
+                        @include breakpoint(mid-phone) {
+                            font-size: 12px;
+                        }
+                    }
+                    .item {
+                        position: relative;
+                        overflow: hidden;
+                        label {
+                            font-size: 13px !important;
+                        }
+                        input {
+                            border: 0;
+                            -webkit-box-shadow: none;
+                            box-shadow: none;
+                            outline: none;
+                            border-bottom: 1px solid $color-gray !important;
+                            border-radius: 0;
+                            font-size: 16px;
+                            font-weight: 400;
+                            width: 100%;
+                            position: relative;
+                            z-index: 1;
+                            background: none;
+                            border: 0;
+                            color: #212121;
+                            &:focus+.underline {
+                                -webkit-transform: scaleX(1) translateY(-2px);
+                                transform: scaleX(1) translateY(-2px);
+                                opacity: 1;
+                            }
+                        }
+                        .underline {
+                            height: 2px;
+                            width: 100%;
+                            background: $color-hover;
+                            display: block;
+                            -webkit-transform: scaleX(0) translateY(-2px);
+                            transform: scaleX(0) translateY(-2px);
+                            -webkit-transform-origin: 50%;
+                            transform-origin: 50%;
+                            opacity: 0;
+                            -webkit-transition: all 0.2s linear;
+                            transition: all 0.2s linear;
+                        }
+                    }
+                    .button-action {
+                        padding-top: 5%;
+                        .btn {
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+#modal-signIn {
+    .modal-dialog {
+        width: 30%;
+        @include breakpoint(small-desktop) {
+            width: 35%;
+        }
+        @include breakpoint(small-desktop) {
+            width: 45%;
+        }
+        @include breakpoint(small-tablet) {
+            width: auto;
+            padding: 0 20%;
+        }
+        @include breakpoint(phone) {
+            padding: 0 10%;
+        }
+        @include breakpoint(mid-phone) {
+            padding: 0;
+        }
+        .modal-content {
+            .modal-body {
+                form {
+                    .forgotPass,
+                    .creatAccount {
+                        text-align: center;
+                    }
+                    .creatAccount {
+                        margin-top: 10%;
+                        .form-group {
+                            margin: 0;
+                            padding-top: 15px;
+                            border-top: 1px solid #c2c2c2;
+                            a {
+                                color: $color-hover;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+#modal-img {
+    .modal-header {
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: 2;
+        button {
+            color: $color-gray;
+            opacity: 1;
+        }
+    }
+    .modal-body {
+        padding: 0;
+        .wrp-item {
+            position: relative;
+            .img-product {
+                width: 100%;
+                position: relative;
+                height: 0;
+                padding-top: 100%;
+                overflow: hidden;
+                img {
+                    position: absolute;
+                    width: 100%;
+                    -webkit-transition: .3s ease-in-out;
+                    transition: .3s ease-in-out;
+                    top: 50%;
+                    left: 50%;
+                    -webkit-transform: translate(-50%, -50%);
+                    transform: translate(-50%, -50%);
+                    transition: .3s ease-in-out;
+                }
+            }
+        }
+    }
+}
+
+#modal-rating {
+    .modal-dialog {
+        width: 30%;
+        @include breakpoint (small-tablet) {
+            width: auto;
+            margin: 10px 30%;
+        }
+        @include breakpoint (phone) {
+            margin: 10px 25%;
+        }
+        @include breakpoint (mid-phone) {
+            margin: 10px 10%;
+        }
+    }
+    .rating {
+        margin: 0 auto;
+        width: 156px !important;
+        height: 50px !important;
+        font-size: 38px;
+        .rate-base-layer {
+            width: 100% !important;
+            height: 100% !important;
+        }
+        .rate-hover-layer {
+            height: 100% !important;
+        }
+    }
+    .rate-hover-layer {
+        color: $color-hover;
+    }
+    .rate-select-layer {
+        color: $color-hover;
+    }
+    #input-rate {
+        display: none;
+    }
+    .button-action {
+        text-align: center;
+        .btn {
+            width: 50%;
+        }
+    }
+}
+
+#modal-crop-img {
+    .cropit-preview {
+        background-color: #f8f8f8;
+        background-size: cover;
+        margin: 0 auto;
+        width: 250px;
+        height: 250px;
+    }
+
+    .cropit-preview-image-container {
+        cursor: move;
+    }
+
+    .cropit-preview-background {
+        opacity: .15;
+        cursor: auto;
+    }
+
+    input,
+    .export {
+        /* Use relative position to prevent from being covered by image background */
+        // position: relative;
+        // z-index: 10;
+        // display: block;
+    }
+    .feature-crop {
+        margin-top: 5%;
+        .item-feature-crop {
+            @include breakpoint (phone) {
+                width: 100%;
+                margin-bottom: 3%;
+            }
+        }
+    }
+    .file {
+        position: relative;
+        overflow: hidden;
+        padding: 3px 10px;
+        i {
+            padding-right: 2%;
+        }
+        input {
+            position: absolute;
+            font-size: 50px;
+            opacity: 0;
+            right: 0;
+            top: 0;
+        }
+    }
+    i {
+        display: none;
+        margin-right: 5px;
+    }
+    .btn-bg {
+        text-align: center;
+        padding: 10px;
+        cursor: pointer;
+        line-height: 1;
+         width: 100%;
+    }
+    .upload {
+
+        // input {
+        //     background: transparent;
+        //     border: 0;
+        // }
+    } // .button-upload {
+    //     color: $color-hover;
+    //     border: 1px solid $color-hover;
+    //     &:hover {
+    //         -webkit-transition: .3s ease;
+    //         transition: .3s ease;
+    //         color: $color-white;
+    //         background: $color-hover;
+    //     }
+    //     @include breakpoint (small-tablet) {
+    //         font-size: 13px;
+    //     }
+    //     input {
+    //         background: transparent;
+    //         border: 0;
+    //     }
+    // }
+}

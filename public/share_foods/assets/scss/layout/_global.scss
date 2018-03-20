@@ -1,0 +1,41 @@
+body {
+    font-family: $openSans-regular !important;
+    color: $color-gray3;
+    position: relative;
+    a {
+        color: $color-gray3;
+    }
+    a,
+    button,
+    input {
+        &:focus {
+            outline: none !important;
+        }
+    }
+    .wrapper {
+        input,
+        select,
+        button,
+        .btn {
+            border-radius: 0;
+        }
+        a {
+            text-decoration: none;
+            &:hover {
+                i {
+                    color: $color-hover !important;
+                }
+            }
+            &:focus {
+                i {
+                    color: $color-hover !important;
+                }
+            }
+        }
+        #content {
+            @include breakpoint (small-tablet) {
+                padding-top: 60px;
+            }
+        }
+    }
+}

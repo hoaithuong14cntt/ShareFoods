@@ -20,5 +20,7 @@ class DatabaseSeeder extends Seeder
         $this->call(FollowsTableSeeder::class);
         $this->call(BlocksTableSeeder::class);
         $this->call(FavoritesTableSeeder::class);
+        $this->call(CommentsTableSeeder::class);
+        $this->call(SavesTableSeeder::class);
     }
 }

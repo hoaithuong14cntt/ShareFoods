@@ -1,0 +1,119 @@
+.slider-other {
+    /* margin: 0;*/
+    .wrp-item {
+        position: relative;
+        height: 0;
+        padding-top: 4%;
+        background: black;
+        overflow: hidden;
+        &:hover {
+            img {
+                -webkit-transform: scale(3, 3);
+                transform: scale(3, 3);
+            }
+            .hover-view {
+                opacity: 1;
+            }
+        }
+        img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            -webkit-transform: scale(2.5, 2.5);
+            transform: scale(2.5, 2.5);
+            -webkit-transition: .3s ease-in-out;
+            transition: .3s ease-in-out;
+        }
+        .hover-view {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.7);
+            opacity: 0;
+            -webkit-transition: .2s ease-in-out;
+            transition: .2s ease-in-out;
+            .view {
+                display: inline-block;
+                border: 2px solid rgba(255, 255, 255, 0.6);
+                background: $color-main;
+                padding: 3% 4%;
+                -webkit-transform: rotate(45deg);
+                transform: rotate(45deg);
+                width: 40px;
+                height: 40px;
+                margin-top: 15%;
+                margin-left: 43%;
+                z-index: 2;
+                @include breakpoint(tablet) {
+                    width: 35px;
+                    height: 35px;
+                    padding: 3% 5%;
+                }
+                @include breakpoint(small-tablet) {
+                    margin-left: 40%;
+                }
+                @include breakpoint(phone) {
+                    background: transparent;
+                    border: 0;
+                }
+                a {
+                    display: block;
+                    margin-left: 0;
+                    -webkit-transform: rotate(-45deg);
+                    transform: rotate(-45deg);
+                    color: $color-white;
+                    &:hover {
+                        i {
+                            color: $color-white !important;
+                            @include breakpoint(phone) {
+                                color: $color-hover !important;
+                            }
+                        }
+                    }
+                    i {
+                        vertical-align: super;
+                        @include breakpoint(tablet) {
+                            font-size: 13px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .slick-prev:before,
+    .slick-next:before {
+        content: none;
+    }
+    .slick-prev:hover {
+        background-color: rgba(0, 0, 0, 0.8) !important;
+    }
+    .slick-next:hover {
+        background-color: rgba(0, 0, 0, 0.8) !important;
+    }
+    .slick-prev,
+    .slick-next {
+        width: 30px;
+        height: 30px;
+        z-index: 1;
+        @include breakpoint(mid-phone) {
+            display: none !important;
+        }
+    }
+    .slick-prev {
+        background: url('../img/icon/pre-2.png') no-repeat center !important;
+        background-size: 17px !important;
+        left: 3%;
+        background-color: rgba(0, 0, 0, 0.5) !important;
+        border-radius: 50% !important;
+    }
+    .slick-next {
+        background: url('../img/icon/next-2.png') no-repeat center !important;
+        background-size: 17px !important;
+        right: 3%;
+        background-color: rgba(0, 0, 0, 0.5) !important;
+        border-radius: 50% !important;
+    }
+}

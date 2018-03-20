@@ -1,0 +1,110 @@
+#footer {
+    background: url(../img/background/bg6.jpg) no-repeat !important;
+    background-size: cover !important;
+    background-position: center !important;
+    text-align: center;
+    .wrp_footer {
+        background: rgba(0, 0, 0, 0.9);
+        color: $color-white;
+        p {
+            @include breakpoint(tablet) {
+                font-size: 13px;
+            }
+        }
+        .main_footer {
+            padding: 2% 0;
+            p {
+                line-height: 1.5;
+                @include breakpoint(mid-phone) {
+                    font-size: 11px;
+                }
+            }
+            .item_footer {
+                a {
+                    color: $color-hover;
+                }
+                h3 {
+                    margin: 7% 0;
+                    font-size: 22px;
+                    font-family: $openSans-semibold;
+                    @include breakpoint(tablet) {}
+                    @include breakpoint(small-tablet) {
+                        font-size: 20px;
+                        margin: 0;
+                        margin-bottom: 3%;
+                    }
+                    @include breakpoint(phone) {
+                        font-size: 18px;
+                    }
+                    @include breakpoint(mid-phone) {
+                        font-size: 15px;
+                    }
+                }
+                @include breakpoint(small-tablet) {
+                    width: 100%;
+                    padding: 0;
+                    margin-top: 3%;
+                }
+            }
+            .logo {
+                padding: 4% 0;
+                @include breakpoint(small-tablet) {
+                    padding: 0;
+                }
+                .bg {
+                    background: url(../img/logo/logo3.png) no-repeat;
+                    background-position: center;
+                    background-size: 45%;
+                    height: 0;
+                    padding-top: 25%;
+                    @include breakpoint (tablet) {
+                        background-size: 65%;
+                        padding-top: 30%;
+                    }
+                    @include breakpoint (small-tablet) {
+                        background-size: 20%;
+                        padding-top: 12%;
+                    }
+                    @include breakpoint (mid-phone) {
+                        background-size: 30%;
+                        padding-top: 14%;
+                    }
+                }
+            }
+            .cu {
+                .social {
+                    margin-top: 6%;
+                    @include breakpoint(tablet) {
+                        margin-top: 7%;
+                    }
+                    @include breakpoint(small-tablet) {
+                        padding: 0 25%;
+                    }
+                    a {
+                        display: inline-block;
+                        color: $color-white;
+                        i {
+                            font-size: 17px;
+                            @include breakpoint(small-tablet) {
+                                font-size: 15px;
+                            }
+                            &:hover {
+                                color: $color-hover;
+                            }
+                        }
+                    }
+                    .item {
+                        padding: 0;
+                    }
+                }
+            }
+        }
+        .bottom_footer {
+            padding: 1% 0;
+            border-top: 1px solid $color-white;
+            p {
+                margin: 0;
+            }
+        }
+    }
+}

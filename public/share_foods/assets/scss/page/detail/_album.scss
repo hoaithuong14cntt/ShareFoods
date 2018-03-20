@@ -1,0 +1,23 @@
+.album {
+    .ctn-products {
+        .item-product {
+            margin: 0;
+            .wrp-item {
+                -webkit-box-shadow: 2px 2px 3px -1px #9f9f9f;
+                box-shadow: 2px 2px 3px -1px #9f9f9f;
+                &:hover {
+                    img {
+                        -webkit-transform: scale(4, 4);
+                        transform: scale(4, 4);
+                    }
+                    .hover-view {
+                        opacity: 1;
+                    }
+                }
+                .img-product {
+                    padding-top: 75%;
+                }
+            }
+        }
+    }
+}

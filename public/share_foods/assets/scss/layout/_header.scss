@@ -1,0 +1,214 @@
+#header {
+    background: $color-gray5;
+    a,
+    i {
+        color: $color-white;
+    }
+    @include breakpoint (small-tablet) {
+        position: fixed;
+        z-index: 10;
+        width: 100%;
+        top: 0;
+    }
+    .menu-top {
+        .logo {
+            .wrp-img {
+                position: relative;
+                height: 0;
+                overflow: hidden;
+                padding-top: 60px;
+                width: 48%;
+                @include breakpoint (small-desktop) {
+                    width: 50%;
+                }
+                @include breakpoint (tablet) {
+                    width: 70%;
+                }
+                @include breakpoint (small-tablet) {
+                    width: 100px;
+                }
+                @include breakpoint (phone) {
+                    width: 90px;
+                    top: 5px;
+                }
+                @include breakpoint (mid-phone) {
+                    top: 0;
+                }
+                img {
+                    width: 100%;
+                    height: auto;
+                    position: absolute;
+                    top: 0;
+                    bottom: 0;
+                    right: 0;
+                    left: 0;
+                    @include breakpoint (small-desktop) {
+                        top: 3px;
+                    }
+                    @include breakpoint (mid-phone) {
+                        top: 8px;
+                    }
+                }
+            }
+        }
+        .top-right {
+            padding: 15px;
+            .user-features,
+            .user-features,
+            .toggle-menu,
+            .btn-modal-search {
+                a {
+                    vertical-align: -moz-middle-with-baseline;
+                    vertical-align: -webkit-baseline-middle;
+                }
+            }
+
+            .user-features {
+                text-align: right;
+                @include breakpoint (small-tablet) {
+                    display: inline-block;
+                    float: right;
+                }
+                .item-feature {
+                    display: inline-block;
+                    padding: 0 10px;
+                    @include breakpoint (small-tablet) {
+                        padding: 0;
+                    }
+                    a {
+                        font-size: 15px;
+                        &:hover {
+                            color: $color-hover;
+                        }
+                        &:focus {
+                            color: $color-hover;
+                        }
+                        i {
+                            padding-right: 10px;
+                            font-size: 0;
+                        }
+                    }
+                }
+                .user {
+                    img {
+                        width: 25px;
+                        height: 25px;
+                        vertical-align: -moz-middle-with-baseline;
+                        vertical-align: -webkit-baseline-middle;
+                        border-radius: 50%;
+                        border: 1px solid transparent;
+                        margin-right: 5px;
+                    }
+                    .btn-user {
+                        @include breakpoint (small-tablet) {
+                            font-size: 0;
+                        }
+                    }
+                    .dropdown-menu {
+                        min-width: 100%;
+                        border-radius: 2px;
+                        right: 0;
+                        left: unset;
+                        li {
+                            a {
+                                color: $color-main;
+                                &:hover {
+                                    background: $color-hover;
+                                    color: $color-white;
+                                }
+                            }
+                        }
+                    }
+                }
+                .signIn {
+                    @include breakpoint (small-tablet) {
+                        a {
+                            font-size: 0;
+                            i {
+                                font-size: 15px;
+                                vertical-align: -moz-middle-with-baseline;
+                                vertical-align: -webkit-baseline-middle;
+                            }
+                        }
+                    }
+                }
+                .signUp {
+                    padding-right: 0;
+                    @include breakpoint (small-tablet) {
+                        display: none;
+                    }
+                }
+            }
+            .search {
+                @include breakpoint (small-tablet) {
+                    display: none;
+                }
+                #inputSearch {
+                    height: 32px;
+                    border-right: 0;
+                    -webkit-box-shadow: none;
+                    box-shadow: none;
+                }
+                .input-group-addon {
+                    background: $color-white;
+                    border-radius: 0;
+                    a {
+                        i {
+                            color: $color-black;
+                        }
+                    }
+                }
+            }
+            .toggle-menu,
+            .btn-modal-search {
+                display: none;
+                @include breakpoint (small-tablet) {
+                    display: inline-block;
+                    float: right;
+                }
+            }
+            .toggle-menu {
+                a {
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+    .navbar {
+        min-height: 100%;
+        border-top: 1px solid $color-gray3;
+        margin: 0;
+
+        &.affix {
+            top: 0;
+            width: 100%;
+            z-index: 10;
+            background: $color-gray5;
+            min-height: unset;
+            @include breakpoint (small-tablet) {
+                position: unset;
+            }
+        }
+        .nav {
+            li {
+                a {
+                    border-top: 2px solid transparent;
+                    border-bottom: 2px solid transparent;
+                    font-size: 15px;
+                    padding-right: 20px;
+                    padding-left: 20px;
+                    text-transform: capitalize;
+                    letter-spacing: 2px;
+                    -webkit-transition: all .3s;
+                    transition: all .3s;
+                    &:hover {
+                        background: $color-hover;
+                    }
+                    &:focus {
+                        background: $color-hover;
+                    }
+                }
+            }
+        }
+    }
+}

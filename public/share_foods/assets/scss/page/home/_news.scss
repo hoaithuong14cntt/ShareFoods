@@ -1,0 +1,35 @@
+#news {
+    background: url('../img/background/bg10.jpg') no-repeat;
+    background-position: center;
+    background-size: cover;
+    .ctn-products {
+        .item-product {
+            -webkit-transition: .3s ease-in-out;
+            transition: .3s ease-in-out;
+            &:hover {
+                border-color: $color-main;
+                .img {
+                    -webkit-transform: scale(4, 4) !important;
+                    transform: scale(4, 4) !important;
+                }
+                .hover-view {
+                    opacity: 1;
+                }
+            }
+            @include breakpoint(small-tablet) {
+                border: none;
+            }
+            .wrp-item {
+
+
+
+                .img-product {
+                    padding-top: 90%;
+                    .img {}
+                    .hover-view {}
+                }
+                .ctn-product {}
+            }
+        }
+    }
+}

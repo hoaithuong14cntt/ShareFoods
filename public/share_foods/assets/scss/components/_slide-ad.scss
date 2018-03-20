@@ -1,0 +1,170 @@
+.slide-ad {
+    .slider-ad {
+        margin: 0;
+        .wrp-item {
+            position: relative;
+            height: 0;
+            padding-top: 6%;
+            background: black;
+            img {
+                width: 100%;
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: 1;
+            }
+            .bg {
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                z-index: 2;
+                background: rgba(0, 0, 0, 0.5);
+                .slide-text {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    -webkit-transform: translate(-50%, -50%);
+                            transform: translate(-50%, -50%);
+                    h2 {
+                        color: $color-white;
+                        margin: auto;
+                        text-shadow: 2px 2px 2px black;
+                        font-family: $pacifico;
+                        font-size: 60px;
+                        @include breakpoint(small-desktop) {
+                            font-size: 52px;
+                        }
+
+                        @include breakpoint(tablet) {
+                            font-size: 40px;
+                        }
+
+                        @include breakpoint(small-tablet) {
+                            font-size: 35px;
+                        }
+
+                        @include breakpoint(phone) {
+                            font-size: 28px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .slick-dots {
+        bottom: 7%;
+    }
+    .slick-dots li {
+        width: initial;
+        height: initial;
+        margin: 0 1%;
+    }
+    .slick-dots li button:before {
+        content: none;
+    }
+    .slick-dots li button {
+        width: 12px;
+        height: 12px;
+        padding: 0;
+        background: $color-black;
+        border-radius: 50%;
+        border: 1px solid $color-black;
+        @include breakpoint(tablet) {
+            width: 10px;
+            height: 10px;
+        }
+        @include breakpoint(small-tablet) {
+            width: 8px;
+            height: 8px;
+        }
+    }
+    .slick-dots li.slick-active button {
+        background: $color-white;
+        border: 3px solid $color-dots;
+        -webkit-box-shadow: 2px 2px 3px 0px $color-black;
+                box-shadow: 2px 2px 3px 0px $color-black;
+        @include breakpoint(tablet) {
+            border: 2px solid $color-dots;
+        }
+    }
+
+    .slick-slide img {
+        width: 100%;
+    }
+
+    .slick-prev:before,
+    .slick-next:before {
+        content: none;
+    }
+    .slick-prev:hover {
+        background-color: rgba(255, 255, 255, 0.8) !important;
+    }
+    .slick-next:hover {
+        background-color: rgba(255, 255, 255, 0.8) !important;
+    }
+    .slick-prev,
+    .slick-next {
+        width: 70px;
+        height: 70px;
+        z-index: 1;
+        @include breakpoint(mid-desktop) {
+            width: 50px;
+            height: 50px;
+        }
+        @include breakpoint(tablet) {
+            width: 48px;
+            height: 48px;
+        }
+        @include breakpoint(small-tablet) {
+            width: 42px;
+            height: 42px;
+        }
+        @include breakpoint(phone) {
+            width: 35px;
+            height: 35px;
+        }
+        @include breakpoint(mid-phone) {
+            display: none !important;
+        }
+    }
+    .slick-prev {
+        background: url('../img/icon/pre.png') no-repeat center !important;
+        background-size: 40px !important;
+        left: 3%;
+        background-color: rgba(255, 255, 255, 0.5) !important;
+        border-radius: 50%;
+        @include breakpoint(mid-desktop) {
+            background-size: 32px !important;
+        }
+        @include breakpoint(tablet) {
+            background-size: 30px !important;
+        }
+        @include breakpoint(small-tablet) {
+            background-size: 25px !important;
+        }
+        @include breakpoint(phone) {
+            background-size: 20px !important;
+        }
+    }
+    .slick-next {
+        background: url('../img/icon/next.png') no-repeat center !important;
+        background-size: 40px !important;
+        right: 3%;
+        background-color: rgba(255, 255, 255, 0.5) !important;
+        border-radius: 50%;
+        @include breakpoint(mid-desktop) {
+            background-size: 32px !important;
+        }
+        @include breakpoint(tablet) {
+            background-size: 30px !important;
+        }
+        @include breakpoint(small-tablet) {
+            background-size: 25px !important;
+        }
+        @include breakpoint(phone) {
+            background-size: 20px !important;
+        }
+    }
+}

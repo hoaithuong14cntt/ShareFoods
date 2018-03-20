@@ -1,0 +1,10 @@
+.detail {
+	.wrapper-content {
+		padding-top: 4%;
+	}
+	@import "page/detail/information";
+	@import "page/detail/description";
+	@import "page/detail/album";
+	@import "page/detail/other";
+	@import "page/detail/comments";
+}

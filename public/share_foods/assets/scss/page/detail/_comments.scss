@@ -1,0 +1,49 @@
+.comments {
+    .ctn-comments {
+        @include breakpoint (small-tablet) {
+            padding: 0 15px;
+        }
+        .input-cmt {
+            textarea {
+                border-radius: 0;
+                resize: none;
+                width: 100%;
+            }
+            .btn {
+                @include breakpoint (small-tablet) {
+                    padding: 5% 15%;
+                    font-size: 13px;
+                    display: block;
+                }
+            }
+        }
+        display: block;
+        .media {
+            padding-bottom: 2%;
+            border-bottom: 1px dashed $color-gray6;
+            &:last-child {
+                border: none;
+            }
+            @include breakpoint (mid-phone) {
+                font-size: 14px;
+            }
+            .media-left {
+                img {
+                    width: 45px;
+                    border-radius: 50%;
+                    @include breakpoint (mid-phone) {
+                        width: 35px;
+                    }
+                }
+            }
+            .media-body {
+                h4 {
+                    font-weight: bold;
+                }
+                small {
+                    color: $color-gray;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,22 @@
+.description {
+    background: url('../img/background/bg14.jpg') no-repeat;
+    background-position: center;
+    background-size: cover;
+    .wrp-blur {
+        background: rgba(0, 0, 0, 0.85);
+        .ctn-description {
+            p {
+                color: $color-white;
+                line-height: 1.5;
+                text-align: center;
+                font-size: 18px;
+                @include breakpoint (small-tablet) {
+                    font-size: 16px;
+                }
+                @include breakpoint (phone) {
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+}

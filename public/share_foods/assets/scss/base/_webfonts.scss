@@ -1,0 +1,41 @@
+
+// @import "./node_modules/sass-font-face/_font-face.scss";
+
+
+// $openSans-regular: 'Open Sans Regular';
+// $pacifico: 'Pacifico';
+
+// @include font-face($openSans-regular, '../fonts/', 'OpenSans-Regular-webfont', 'open_sansregular');
+// @include font-face($pacifico, '../fonts/', 'Pacifico', 'pacifico');
+
+@font-face {
+	font-family: 'OpenSans Bold';
+	src: url("../fonts/OpenSans-Bold.ttf") format("truetype");
+}
+@font-face {
+	font-family: 'OpenSans Regular';
+	src: url("../fonts/OpenSans-Regular.ttf") format("truetype");
+}
+@font-face {
+	font-family: 'OpenSans Light';
+	src: url("../fonts/OpenSans-Light.ttf") format("truetype");
+}
+@font-face {
+	font-family: 'Pacifico';
+	src: url("../fonts/Pacifico.ttf") format("truetype");
+}
+
+@font-face {
+	font-family: 'OpenSans ExtraBold';
+	src: url("../fonts/OpenSans-ExtraBold.ttf") format("truetype");
+}
+@font-face {
+	font-family: 'OpenSans Semibold';
+	src: url("../fonts/OpenSans-Semibold.ttf") format("truetype");
+}
+$openSans-light: 'OpenSans Light';
+$openSans-extraBold: 'OpenSans ExtraBold';
+$openSans-semibold: 'OpenSans Semibold';
+$openSans-regular: 'OpenSans Regular';
+$openSans-bold: 'OpenSans Bold';
+$pacifico: 'Pacifico';
