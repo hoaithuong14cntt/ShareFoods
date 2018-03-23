@@ -11,7 +11,7 @@ class HomeController extends Controller
     {
         $placeNews = Place::orderBy('created_at', 'DESC')->offset(0)->limit(8)->get();
         $placeInteresteds = Place::orderBy('favorites_count', 'DESC')->offset(0)->limit(8)->get();
-//thuong
+
         return view('share_foods.index', compact('placeNews', 'placeInteresteds'));
     }
 
