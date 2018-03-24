@@ -57,13 +57,13 @@
                   <img class="img" src="{{ $placeInterested->image }}" alt="">
                   <div class="hover-view">
                     <div class="view">
-                      <a class="btn-view" href="detail.html"><i class="fa fa-eye"></i></a>
+                      <a class="btn-view" href="{{ route('sharefood.show', ['name' => str_slug($placeInterested->name), 'place' => $placeInterested->id]) }}"><i class="fa fa-eye"></i></a>
                     </div>
                   </div>
                 </div>
                 <div class="ctn-product">
                   <div class="info">
-                    <h3><a href="detail.html">{{ $placeInterested->name }}</a></h3>
+                    <h3><a href="{{ route('sharefood.show', ['name' => str_slug($placeInterested->name), 'place' => $placeInterested->id]) }}">{{ $placeInterested->name }}</a></h3>
                     <p class="address">{{ $placeInterested->address }}</p>
                   </div>
                   <div class="parameter">
@@ -133,7 +133,7 @@
             </div>
           @endforeach
             <div class="view-more col-md-12 col-xs-12">
-              <a href="{{ route('all') }}" title=""><button class="btn btn-bg">View more</button></a>
+              <a href="{{ route('sharefood.all') }}" title=""><button class="btn btn-bg">View more</button></a>
             </div>
             <div class="clearfix"></div>
           </div>

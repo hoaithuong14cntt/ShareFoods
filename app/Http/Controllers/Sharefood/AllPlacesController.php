@@ -24,8 +24,14 @@ class AllPlacesController extends Controller
         return view('share_foods.all_places', compact('getAlls'));
     }
 
-    public function show(Place $place)
+    public function show($name, Place $place)
     {
-        return view('share_foods.show', compact('place'));
+        $place = $place->load('foods');
+        $orthers = Place::where([
+            ['category_id', '=', $place->category_id],
+            ['id', '<>', $place->id],
+        ])->get();
+
+        return view('share_foods.show', compact('place', 'orthers'));
     }
 }

@@ -47,4 +47,9 @@ class Place extends Model
 
         return Storage::url($value);
     }
+
+    public function foods()
+    {
+        return $this->hasMany(Food::class);
+    }
 }

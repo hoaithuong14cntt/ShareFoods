@@ -20,6 +20,7 @@ class FoodsTableSeeder extends Seeder
                 'place_id' => $faker->randomElement(App\Place::all()->pluck('id')->toArray()),
                 'name' => $faker->company,
                 'image' => $faker->image('public/storage/', 400, 300, null, false),
+                'price' => '30000',
                 'description' => $faker->text,
                 'content' => $faker->text,
                 'created_at' => Carbon::now(),
