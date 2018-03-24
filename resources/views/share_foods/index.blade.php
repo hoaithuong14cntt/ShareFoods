@@ -133,7 +133,7 @@
             </div>
           @endforeach
             <div class="view-more col-md-12 col-xs-12">
-              <button class="btn btn-bg" type="submit">View more</button>
+              <a href="{{ route('all') }}" title=""><button class="btn btn-bg">View more</button></a>
             </div>
             <div class="clearfix"></div>
           </div>
