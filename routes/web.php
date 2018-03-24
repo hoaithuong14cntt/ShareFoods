@@ -13,6 +13,9 @@
 
 Route::pattern('name', '(.*)');
 Route::group(['namespace' => 'Sharefood', 'as' => 'sharefood.'], function () {
+    Route::group(['as' => 'auth.'], function () {
+        Route::post('login', ['as' => 'login', 'uses' => 'AuthController@login']);
+    });
     Route::get('/', ['as' => 'index', 'uses' => 'HomeController@index']);
     Route::get('contact', ['as' => 'contact', 'uses' => 'HomeController@contact']);
     Route::get('search', ['as' => 'search', 'uses' => 'HomeController@search']);

@@ -14,6 +14,13 @@ class User extends Authenticatable
      *
      * @var array
      */
+
+    const TYPES = [
+        'user' => 1,
+        'staff' => 2,
+        'admin' => 3,
+    ];
+
     protected $fillable = [
         'name', 'email', 'password',
     ];
@@ -27,6 +34,21 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
+    public function getIsUserAttribute()
+    {
+        return self::TYPES['user'] == $this->type;
+    }
+
+    public function getIsStaffAttribute()
+    {
+        return self::TYPES['staff'] == $this->type;
+    }
+
+    public function getIsAdminAttribute()
+    {
+        return self::TYPES['admin'] == $this->type;
+    }
+
     public function favorites()
     {
         return $this->belongsToMany(Design::class, 'favorites', 'user_id', 'favorited_id');
@@ -35,5 +57,10 @@ class User extends Authenticatable
     public function comments()
     {
         return $this->belongsToMany(Place::class, 'comments', 'user_id', 'place_id');
+    }
+
+    public function notes()
+    {
+        return $this->belongsToMany(Place::class, 'saves', 'user_id', 'place_id');
     }
 }
