@@ -36,9 +36,4 @@ class User extends Authenticatable
     {
         return $this->belongsToMany(Place::class, 'comments', 'user_id', 'place_id');
     }
-
-    public function saves()
-    {
-        return $this->belongsToMany(Place::class, 'saves', 'user_id', 'place_id');
-    }
 }

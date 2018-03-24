@@ -311,7 +311,7 @@ table {
   /* margin: 0;*/ }
   .slider-other .wrp-item {
     position: relative;
-    height: 0;
+    height: 200px;
     padding-top: 4%;
     background: black;
     overflow: hidden; }

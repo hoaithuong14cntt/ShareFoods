@@ -1,0 +1,8 @@
+.wrp-item .detail span {
+	font-weight: bold;
+}
+
+.detail {
+	padding: 20px;
+    line-height: 28px;
+}

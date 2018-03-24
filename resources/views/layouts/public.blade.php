@@ -13,6 +13,7 @@
     <link rel="stylesheet" type="text/css" href="/share_foods/assets/css/slick-theme.css">
     <link rel="stylesheet" type="text/css" href="/share_foods/assets/css/animate.min.css">
     <link rel="stylesheet" type="text/css" href="/share_foods/assets/css/main.css">
+    <link rel="stylesheet" type="text/css" href="/share_foods/assets/css/sharefood.css">
 </head>
 
 <body>

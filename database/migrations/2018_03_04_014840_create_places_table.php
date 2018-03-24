@@ -23,6 +23,8 @@ class CreatePlacesTable extends Migration
             $table->string('lng');
             $table->time('start_time');
             $table->time('end_time');
+            $table->integer('from_price');
+            $table->integer('to_price');
             $table->integer('discount');
             $table->string('name');
             $table->string('phone', 13)->nullable();

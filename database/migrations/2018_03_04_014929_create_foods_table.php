@@ -18,6 +18,7 @@ class CreateFoodsTable extends Migration
             $table->unsignedInteger('place_id');
             $table->string('image');
             $table->string('name');
+            $table->integer('price');
             $table->text('description');
             $table->text('content');
             $table->timestamps();

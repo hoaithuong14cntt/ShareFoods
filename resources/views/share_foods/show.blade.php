@@ -7,7 +7,7 @@
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="index.html">Home</a></li>
           <li class="breadcrumb-item"><a href="#">Detail</a></li>
-          <li class="breadcrumb-item active-breadcrumb">The Coffe House</li>
+          <li class="breadcrumb-item active-breadcrumb">{{ $place->name }}</li>
         </ol>
       </div>
     </div>
@@ -124,14 +124,15 @@
       <div class="container">
         <div class="row">
           <div class="title">
-            <h2>Album</h2>
+            <h2>Foods</h2>
             <p class="underline"></p>
           </div>
           <div class="ctn-products ctn-main">
+          @foreach($place->foods as $food)
             <div class="item-product col-md-3 col-xs-4">
               <div class="wrp-item">
                 <div class="img-product">
-                  <img class="img" src="assets/img/food/food1.jpg" alt="">
+                  <img class="img" src="{{ $food->image}}" alt="">
                   <div class="hover-view">
                     <div class="view">
                       <a class="btn-view" href="" data-toggle="modal" data-target="#modal-img"><i class="fa fa-eye"></i></a>
@@ -148,7 +149,12 @@
                           <div class="modal-body">
                             <div class="wrp-item">
                               <div class="img-product">
-                                <img class="img" src="assets/img/restaurant/res5.jpg" alt="">
+                                <img class="img" src="{{ $food->image}}" alt="">
+                              </div>
+                              <div class="detail">
+                              <div><span>Name: </span>{{ $food->name }}</div>
+                              <div><span>Price: </span>{{ $food->price }}</div>
+                              <div><span>Description: </span>{{ $food->description }}</div>
                               </div>
                             </div>
                           </div>
@@ -159,94 +165,8 @@
                 </div>
               </div>
             </div>
-            <div class="item-product col-md-3 col-xs-4">
-              <div class="wrp-item">
-                <div class="img-product">
-                  <img class="img" src="assets/img/restaurant/res2.jpg" alt="">
-                  <div class="hover-view">
-                    <div class="view">
-                      <a class="btn-view" href="" data-toggle="modal" data-target="#modal-img"><i class="fa fa-eye"></i></a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="item-product col-md-3 col-xs-4">
-              <div class="wrp-item">
-                <div class="img-product">
-                  <img class="img" src="assets/img/food/food3.jpg" alt="">
-                  <div class="hover-view">
-                    <div class="view">
-                      <a class="btn-view" href="" data-toggle="modal" data-target="#modal-img"><i class="fa fa-eye"></i></a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="item-product col-md-3 col-xs-4">
-              <div class="wrp-item">
-                <div class="img-product">
-                  <img class="img" src="assets/img/restaurant/res4.jpg" alt="">
-                  <div class="hover-view">
-                    <div class="view">
-                      <a class="btn-view" href="" data-toggle="modal" data-target="#modal-img"><i class="fa fa-eye"></i></a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="item-product col-md-3 col-xs-4">
-              <div class="wrp-item">
-                <div class="img-product">
-                  <img class="img" src="assets/img/restaurant/res6.jpg" alt="">
-                  <div class="hover-view">
-                    <div class="view">
-                      <a class="btn-view" href="" data-toggle="modal" data-target="#modal-img"><i class="fa fa-eye"></i></a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="item-product col-md-3 col-xs-4">
-              <div class="wrp-item">
-                <div class="img-product">
-                  <img class="img" src="assets/img/food/food5.jpg" alt="">
-                  <div class="hover-view">
-                    <div class="view">
-                      <a class="btn-view" href="" data-toggle="modal" data-target="#modal-img"><i class="fa fa-eye"></i></a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="item-product col-md-3 col-xs-4">
-              <div class="wrp-item">
-                <div class="img-product">
-                  <img class="img" src="assets/img/food/food7.jpg" alt="">
-                  <div class="hover-view">
-                    <div class="view">
-                      <a class="btn-view" href="" data-toggle="modal" data-target="#modal-img"><i class="fa fa-eye"></i></a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="item-product col-md-3 col-xs-4">
-              <div class="wrp-item">
-                <div class="img-product">
-                  <img class="img" src="assets/img/restaurant/res5.jpg" alt="">
-                  <div class="hover-view">
-                    <div class="view">
-                      <a class="btn-view" href="" data-toggle="modal" data-target="#modal-img"><i class="fa fa-eye"></i></a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="view-more col-md-12 col-xs-12">
-              <button class="btn btn-bg" type="submit">View more</button>
-            </div>
-            <div class="clearfix"></div>
+          @endforeach
+          <div class="clearfix"></div>
           </div>
         </div>
       </div>
@@ -261,70 +181,16 @@
             </div>
             <div class="ctn-slide ctn-main">
               <div class="slider-other slider">
+              @foreach($orthers as $orther )
                 <div class="wrp-item">
-                  <img src="assets/img/slide_banner/hd1.jpg">
+                  <img src="{{ $orther->image }}">
                   <div class="hover-view">
                     <div class="view">
-                      <a class="btn-view" href="detail.html"><i class="fa fa-eye"></i></a>
+                      <a class="btn-view" href="{{ route('sharefood.show', ['name' => str_slug($orther->name), 'place' => $orther->id]) }}"><i class="fa fa-eye"></i></a>
                     </div>
                   </div>
                 </div>
-                <div class="wrp-item">
-                  <img src="assets/img/restaurant/res1.jpg">
-                  <div class="hover-view">
-                    <div class="view">
-                      <a class="btn-view" href="detail.html"><i class="fa fa-eye"></i></a>
-                    </div>
-                  </div>
-                </div>
-                <div class="wrp-item">
-                  <img src="assets/img/food/food1.jpg">
-                  <div class="hover-view">
-                    <div class="view">
-                      <a class="btn-view" href="detail.html"><i class="fa fa-eye"></i></a>
-                    </div>
-                  </div>
-                </div>
-                <div class="wrp-item">
-                  <img src="assets/img/food/food2.jpg">
-                  <div class="hover-view">
-                    <div class="view">
-                      <a class="btn-view" href="detail.html"><i class="fa fa-eye"></i></a>
-                    </div>
-                  </div>
-                </div>
-                <div class="wrp-item">
-                  <img src="assets/img/restaurant/res3.jpg">
-                  <div class="hover-view">
-                    <div class="view">
-                      <a class="btn-view" href="detail.html"><i class="fa fa-eye"></i></a>
-                    </div>
-                  </div>
-                </div>
-                <div class="wrp-item">
-                  <img src="assets/img/restaurant/res4.jpg">
-                  <div class="hover-view">
-                    <div class="view">
-                      <a class="btn-view" href="detail.html"><i class="fa fa-eye"></i></a>
-                    </div>
-                  </div>
-                </div>
-                <div class="wrp-item">
-                  <img src="assets/img/food/food3.jpg">
-                  <div class="hover-view">
-                    <div class="view">
-                      <a class="btn-view" href="detail.html"><i class="fa fa-eye"></i></a>
-                    </div>
-                  </div>
-                </div>
-                <div class="wrp-item">
-                  <img src="assets/img/food/food5.jpg">
-                  <div class="hover-view">
-                    <div class="view">
-                      <a class="btn-view" href="detail.html"><i class="fa fa-eye"></i></a>
-                    </div>
-                  </div>
-                </div>
+              @endforeach
               </div>
             </div>
           </div>
