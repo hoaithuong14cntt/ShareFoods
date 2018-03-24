@@ -19,7 +19,13 @@ class CreatePlacesTable extends Migration
             $table->unsignedInteger('category_id');
             $table->unsignedInteger('prefecture_id');
             $table->string('image');
+            $table->string('lat');
+            $table->string('lng');
+            $table->time('start_time');
+            $table->time('end_time');
+            $table->integer('discount');
             $table->string('name');
+            $table->string('phone', 13)->nullable();
             $table->text('description');
             $table->text('content');
             $table->string('address');

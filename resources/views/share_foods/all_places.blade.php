@@ -14,21 +14,21 @@
               <div class="wrp">
                 <div class="features">
                   <nav>
-                    <form action="" class="form-avatar">
+                    <form action="{{ route('all') }}" method="get" class="form-avatar">
                       <ul class="nav">
                         <li class="type item">
                           <div class="form-group wrp-item">
-                            <select class="form-control" id="">
-                              <option>All</option>
-                              <option>Interested</option>
-                              <option>News</option>
+                            <select class="form-control" id="" name="search">
+                              <option value="all" >All</option>
+                              <option value="interested" >Interested</option>
+                              <option value="news">News</option>
                             </select>
                           </div>
                         </li>
                         <li class="button-search item">
                           <div class="wrp-item">
                             <div>
-                              <input class="form-control btn btn-bg" type="submit" name="" value="Search">
+                              <input class="form-control btn btn-bg" type="submit" value="Search">
                             </div>
                           </div>
                         </li>
@@ -81,7 +81,9 @@
                   </div>
                 @endforeach
                   <div class="view-more col-md-12 col-xs-12">
-                    <button class="btn btn-bg" type="submit">View more</button>
+                      <ul class="pagination">
+                        {{ $getAlls->links() }}
+                      </ul>
                   </div>
                   <div class="clearfix"></div>
                 </div>

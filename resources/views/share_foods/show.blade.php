@@ -19,7 +19,7 @@
           <div class="infor-main">
             <div class="col-md-5 col-xs-5 image">
               <div class="wrp">
-                <img src="assets/img/restaurant/res7.jpg" alt="">
+                <img src="{{ $place->image }}" alt="">
                 <div class="ribbon">
                   <p>
                     <span>Sale</span> 50%
@@ -39,14 +39,14 @@
                     <p>8</p>
                   </div>
                   <div class="name-address">
-                    <h3> The Coffe House  </h3>
+                    <h3>{{ $place->name }}</h3>
                   </div>
                   <div class="clearfix"> </div>
                 </div>
-                <p class="item address "><i class="fa fa-location-arrow"></i>123 Bach Dang, Da Nang</p>
+                <p class="item address "><i class="fa fa-location-arrow"></i>{{ $place->address }}</p>
                 <p class="item price "><i class="fa fa-tag"></i>50.000 - 100.000</p>
-                <p class="item phone "><i class="fa fa-phone"></i>0511.65232323</p>
-                <p class="item time "><i class="fa fa-clock-o"></i>08:00 - 21:00</p>
+                <p class="item phone "><i class="fa fa-phone"></i>{{ $place->phone }}</p>
+                <p class="item time "><i class="fa fa-clock-o"></i>{{ $place->start_time }} - {{ $place->end_time }}</p>
                 <div class="item features">
                   <form>
                     <div class="item-feature save">
@@ -112,7 +112,7 @@
             </div>
             <div class="ctn-description ctn-main">
               <div class="col-md-8 col-md-push-2">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam reprehenderit in voluptate velit esse cillum dolore! Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmo incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam reprehenderit</p>
+                <p>{{ $place->description }}</p>
               </div>
               <div class="clearfix"></div>
             </div>

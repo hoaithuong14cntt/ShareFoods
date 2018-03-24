@@ -16,7 +16,7 @@ Route::group(['namespace' => 'Sharefood'], function () {
     Route::get('/', ['as' => 'index', 'uses' => 'HomeController@index']);
     Route::get('contact', ['as' => 'contact', 'uses' => 'HomeController@contact']);
     Route::get('search', ['as' => 'search', 'uses' => 'HomeController@search']);
-    Route::get('all', ['as' => 'index', 'uses' => 'AllPlacesController@index']);
+    Route::get('all', ['as' => 'all', 'uses' => 'AllPlacesController@index']);
     Route::get('{place}', ['as' => 'show', 'uses' => 'AllPlacesController@show'])->where('place', '[0-9]+');
 
     Route::group(['prefix' => 'profile'], function () {
