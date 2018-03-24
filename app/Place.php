@@ -52,4 +52,9 @@ class Place extends Model
     {
         return $this->hasMany(Food::class);
     }
+
+    public function notes()
+    {
+        return $this->belongsToMany(User::class, 'saves', 'place_id', 'user_id');
+    }
 }

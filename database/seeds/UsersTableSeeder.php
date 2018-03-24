@@ -15,7 +15,6 @@ class UsersTableSeeder extends Seeder
     {
         $faker = Faker\Factory::create();
         $limit = 50;
-
         for ($i = 0; $i < $limit; $i++) {
             DB::table('users')->insert([
                 'email' => $faker->unique()->email,
@@ -29,7 +28,8 @@ class UsersTableSeeder extends Seeder
                 'memo' => null,
                 'avatar' => $faker->image('public/storage/', 400, 300, null, false),
                 'phone' => '0905123456',
-                'status' => rand(1, 2),
+                'status' => rand(0, 1),
+                'type' => rand(1, 3),
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
             ]);
