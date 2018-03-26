@@ -14,7 +14,7 @@
               <div class="wrp">
                 <div class="avatar">
                   <div class="img">
-                    <img src="assets/img/user/h5.jpg" alt="..." />
+                    <img src="{{ $user->avatar }}" alt="..." />
                     <div class="edit-avatar" data-toggle="modal" data-target="#modal-crop-img">
                       <i class="fa fa-camera"></i>
                     </div>
@@ -23,8 +23,8 @@
                 <div class="features">
                   <nav>
                     <ul class="nav">
-                      <li class="active"><a href="user-profile.html"><i class="fa fa-pencil-square-o"></i>Edit</a></li>
-                      <li><a href="edit-pass.html"><i class="fa fa-user"></i>Password</a></li>
+                      <li class="active"><a href="{{ route('sharefood.profile.index', ['user' => $user->id, 'name' => str_slug($user->firstname)]) }}"><i class="fa fa-pencil-square-o"></i>Edit</a></li>
+                      <li><a href="{{ route('sharefood.profile.changePassword', ['user' => $user->id, 'name' => str_slug($user->firstname)]) }}"><i class="fa fa-user"></i>Password</a></li>
                       <li><a href="user-saved.html"><i class="fa fa-bookmark"></i>Saved</a></li>
                     </ul>
                   </nav>
@@ -37,9 +37,9 @@
                 <form data-toggle="validator" role="form" action="" class="form-infor form-border-color">
                   <div class="row">
                     <div class="form-group username">
-                      <label class="control-label col-sm-3">Username:</label>
+                      <label class="control-label col-sm-3">Email:</label>
                       <div class="col-sm-9 show-username">
-                        <p>hieutran</p>
+                        <p>{{ $user->email }}</p>
                       </div>
                       <div class="clearfix"></div>
                     </div>
@@ -48,7 +48,7 @@
                     <div class="form-group first-name">
                       <label class="control-label col-sm-3" for="inputFirstName">First Name:</label>
                       <div class="col-sm-9">
-                        <input type="text" class="form-control" id="inputFirstName" placeholder="First name" value="Tran" required>
+                        <input type="text" class="form-control" id="inputFirstName" placeholder="First name" value="{{ $user->firstname }}" required>
                         <div class="help-block with-errors"></div>
                       </div>
                       <div class="clearfix"></div>
@@ -58,7 +58,7 @@
                     <div class="form-group last-name">
                       <label class="control-label col-sm-3" for="inputLastName">Last Name:</label>
                       <div class="col-sm-9">
-                        <input type="text" class="form-control" id="inputLastName" placeholder="Last name" value="Hieu" required>
+                        <input type="text" class="form-control" id="inputLastName" placeholder="Last name" value="{{ $user->lastname }}" required>
                         <div class="help-block with-errors"></div>
                       </div>
                       <div class="clearfix"></div>
@@ -66,9 +66,9 @@
                   </div>
                   <div class="row">
                     <div class="form-group email">
-                      <label class="control-label col-sm-3" for="inputEmail">Email:</label>
+                      <label class="control-label col-sm-3" for="inputEmail">Address:</label>
                       <div class="col-sm-9">
-                        <input type="email" class="form-control" id="inputEmail" placeholder="Email" value="hieutran@gmail.com" required>
+                        <input type="text" class="form-control" id="inputEmail" placeholder="Email" value="{{ $user->address }}" required>
                         <div class="help-block with-errors"></div>
                       </div>
                       <div class="clearfix"></div>

@@ -15,6 +15,7 @@ Route::pattern('name', '(.*)');
 Route::group(['namespace' => 'Sharefood', 'as' => 'sharefood.'], function () {
     Route::group(['as' => 'auth.'], function () {
         Route::post('login', ['as' => 'login', 'uses' => 'AuthController@login']);
+        Route::get('logout', ['as' => 'logout', 'uses' => 'AuthController@logout']);
     });
     Route::get('/', ['as' => 'index', 'uses' => 'HomeController@index']);
     Route::get('contact', ['as' => 'contact', 'uses' => 'HomeController@contact']);
@@ -22,9 +23,9 @@ Route::group(['namespace' => 'Sharefood', 'as' => 'sharefood.'], function () {
     Route::get('all', ['as' => 'all', 'uses' => 'AllPlacesController@index']);
     Route::get('{name}/{place}', ['as' => 'show', 'uses' => 'AllPlacesController@show'])->where('place', '[0-9]+');
 
-    Route::group(['prefix' => 'profile'], function () {
-        Route::get('/', ['as' => 'index', 'uses' => 'ProfileController@index']);
-        Route::get('password', ['as' => 'changePassword', 'uses' => 'ProfileController@changePassword']);
+    Route::group(['prefix' => 'profile', 'as' => 'profile.'], function () {
+        Route::get('{user}/{name}', ['as' => 'index', 'uses' => 'ProfileController@index'])->where('user', '[0-9]+');
+        Route::get('{user}/{name}/password', ['as' => 'changePassword', 'uses' => 'ProfileController@changePassword']);
         Route::get('save', ['as' => 'save', 'uses' => 'ProfileController@save']);
     });
 });

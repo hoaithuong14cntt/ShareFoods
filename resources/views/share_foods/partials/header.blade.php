@@ -26,8 +26,8 @@
               <span class="caret"></span>
               </a>
               <ul class="dropdown-menu">
-                <li><a href="user-profile.html">Profile</a></li>
-                <li><a href="#">Logout</a></li>
+                <li><a href="{{ route('sharefood.profile.index', ['user' => Auth::user()->id, 'name' => str_slug(Auth::user()->firstname)]) }}">Profile</a></li>
+                <li><a href="{{ route('sharefood.auth.logout') }}">Logout</a></li>
               </ul>
             </div>
           @else
