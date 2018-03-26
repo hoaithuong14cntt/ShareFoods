@@ -18,10 +18,11 @@
             </div>
           </div>
           <div class="user-features col-md-6 col-sm-6 item">
+          @if(Auth::check())
             <div class="user dropdown item-feature">
-              <img src="share_foods/assets/img/about-us/h5.jpg" alt="">
+              <img src="{{ Auth::user()->avatar }}" alt="">
               <a href="" class="btn-user  dropdown-toggle" data-toggle="dropdown">
-              Hieu Tran
+              {{ Auth::user()->firstname }}
               <span class="caret"></span>
               </a>
               <ul class="dropdown-menu">
@@ -29,8 +30,10 @@
                 <li><a href="#">Logout</a></li>
               </ul>
             </div>
+          @else
             <div class="signIn item-feature"><a href="" class="btn-signIn" data-toggle="modal" data-target="#modal-signIn"><i class="fa fa-sign-in"></i>Login</a></div>
             <div class="signUp item-feature"><a href="" class="btn-signUp" data-toggle="modal" data-target="#modal-signUp"><i class="fa fa-user"></i>Register</a></div>
+          @endif
           </div>
           <div class="btn-modal-search item">
             <a href="" data-toggle="modal" data-target="#modal-search" class="btn-search"><i class="fa fa-search"></i></a>
