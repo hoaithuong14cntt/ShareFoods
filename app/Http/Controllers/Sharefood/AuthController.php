@@ -24,4 +24,12 @@ class AuthController extends Controller
             }
         }
     }
+
+    public function logout(Request $request)
+    {
+        Auth::logout();
+        // $request->session()->flash('msg', trans('messages.logout_success'));
+
+        return redirect()->route('sharefood.index');
+    }
 }

@@ -4,6 +4,7 @@ namespace App;
 
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Storage;
 
 class User extends Authenticatable
 {
@@ -33,6 +34,15 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function getAvatarAttribute($value)
+    {
+        if (empty($value)) {
+            return '';
+        }
+
+        return Storage::url($value);
+    }
 
     public function getIsUserAttribute()
     {
