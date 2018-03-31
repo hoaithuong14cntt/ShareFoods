@@ -79,11 +79,12 @@ $(document).ready(function() {
         $('.image-editor').cropit('rotateCCW');
     });
 
-    $('.export').click(function() {
-        var imageData = $('.image-editor').cropit('export');
-        // console.log(imageData);
-        window.open(imageData);
-    });
+    // $('.export').click(function() {
+    //     var imageData = $('.image-editor').cropit('export');
+    //     // console.log(imageData);
+    //     // window.open(imageData);
+    //     alert(imageData);
+    // });
 
 });
 

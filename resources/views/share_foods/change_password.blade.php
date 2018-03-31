@@ -23,9 +23,9 @@
                 <div class="features">
                   <nav>
                     <ul class="nav">
-                      <li class="active"><a href="user-profile.html"><i class="fa fa-pencil-square-o"></i>Edit</a></li>
-                      <li><a href="edit-pass.html"><i class="fa fa-user"></i>Password</a></li>
-                      <li><a href="user-saved.html"><i class="fa fa-bookmark"></i>Saved</a></li>
+                      <li><a href="{{ route('sharefood.profile.index', ['user' => $user->id]) }}"><i class="fa fa-pencil-square-o"></i>Edit</a></li>
+                      <li class="active"><a href="{{ route('sharefood.profile.changePassword', ['user' => $user->id]) }}"><i class="fa fa-user"></i>Password</a></li>
+                      <li><a href="{{ route('sharefood.profile.save', ['user' => $user->id]) }}"><i class="fa fa-bookmark"></i>Saved</a></li>
                     </ul>
                   </nav>
                 </div>
@@ -34,21 +34,22 @@
             </div>
             <div class="user-infor item-ctn col-md-9">
               <div class="wrp">
-                <form data-toggle="validator" role="form" action="" class="form-infor form-border-color">
+                <form data-toggle="validator" role="form" action="{{ route('sharefood.profile.update', ['user' => $user->id]) }}" class="form-infor form-border-color" method="POST">
+                  {{ csrf_field() }}
                   <div class="row">
                     <div class="form-group username">
                       <label class="control-label col-sm-3">Username:</label>
                       <div class="col-sm-9 show-username">
-                        <p>hieutran</p>
+                        <p>{{ $user->lastname }} {{ $user->firstname }}</p>
                       </div>
                       <div class="clearfix"></div>
                     </div>
                   </div>
                   <div class="row">
                     <div class="form-group first-name">
-                      <label class="control-label col-sm-3" for="inputFirstName">First Name:</label>
+                      <label class="control-label col-sm-3" for="inputPassword">Password</label>
                       <div class="col-sm-9">
-                        <input type="text" class="form-control" id="inputFirstName" placeholder="First name" value="Tran" required>
+                        <input type="password" class="form-control" id="inputPassword" name="password" placeholder="Password" value="" required data-minlength="6">
                         <div class="help-block with-errors"></div>
                       </div>
                       <div class="clearfix"></div>
@@ -56,19 +57,9 @@
                   </div>
                   <div class="row">
                     <div class="form-group last-name">
-                      <label class="control-label col-sm-3" for="inputLastName">Last Name:</label>
+                      <label class="control-label col-sm-3" for="inputLastName">Password Confirm:</label>
                       <div class="col-sm-9">
-                        <input type="text" class="form-control" id="inputLastName" placeholder="Last name" value="Hieu" required>
-                        <div class="help-block with-errors"></div>
-                      </div>
-                      <div class="clearfix"></div>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="form-group email">
-                      <label class="control-label col-sm-3" for="inputEmail">Email:</label>
-                      <div class="col-sm-9">
-                        <input type="email" class="form-control" id="inputEmail" placeholder="Email" value="hieutran@gmail.com" required>
+                        <input type="password" class="form-control" id="inputLastName" data-match="#inputPassword" name="password_confirm" placeholder="Password Confirm" value="" required data-minlength="6">
                         <div class="help-block with-errors"></div>
                       </div>
                       <div class="clearfix"></div>
