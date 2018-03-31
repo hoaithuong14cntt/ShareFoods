@@ -117,11 +117,12 @@
                         <h4 class="modal-title">sign up</h4>
                     </div>
                     <div class="modal-body">
-                        <form data-toggle="validator" role="form" name="form" id="form-signUp" class="form-horizontal" enctype="multipart/form-data" method="POST">
+                        <form action="{{ route('sharefood.auth.signup') }}" data-toggle="validator" role="form" name="form" id="form-signUp" class="form-horizontal" enctype="multipart/form-data" method="POST">
+                            {{csrf_field()}}
                             <div class="col-md-12 username">
                                 <div class="form-group item">
-                                    <label>Username</label>
-                                    <input type="text" class="form-control input-userName" required>
+                                    <label>Email</label>
+                                    <input type="email" class="form-control input-userName" name="email" required>
                                     <div class="underline"></div>
                                     <div class="help-block with-errors"></div>
                                 </div>
@@ -129,7 +130,7 @@
                             <div class="col-md-12 password">
                                 <div class="form-group item">
                                     <label>Password</label>
-                                    <input type="password" class="form-control input-pass" id="pass" data-minlength="6" required data-error="Mật khẩu phải ít nhất 6 kí tự">
+                                    <input type="password" name="password" class="form-control input-pass" id="pass" data-minlength="6" required data-error="Mật khẩu phải ít nhất 6 kí tự">
                                     <div class="underline"></div>
                                     <div class="help-block with-errors"></div>
                                 </div>
@@ -145,7 +146,7 @@
                             <div class="col-md-12 firstName">
                                 <div class="form-group item">
                                     <label>First Name</label>
-                                    <input type="text" class="form-control input-firstName" required>
+                                    <input type="text" name="firstname" class="form-control input-firstName" required>
                                     <div class="underline"></div>
                                     <div class="help-block with-errors"></div>
                                 </div>
@@ -153,8 +154,16 @@
                             <div class="col-md-12 lastName">
                                 <div class="form-group item">
                                     <label>Last Name</label>
-                                    <input type="text" class="form-control input-lastName" required>
+                                    <input type="text" name="lastname" class="form-control input-lastName" required>
                                     <div class="underline"></div>
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                            </div>
+                            <div class="col-md-12 gender">
+                                <div class="form-group item">
+                                    <label>Gender</label>
+                                    <input type="radio" name="gender" value="1" checked> Male
+                                    <input type="radio" name="gender" value="2"> Female
                                     <div class="help-block with-errors"></div>
                                 </div>
                             </div>

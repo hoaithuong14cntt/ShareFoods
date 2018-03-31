@@ -24,7 +24,7 @@ class AllPlacesController extends Controller
         return view('share_foods.all_places', compact('getAlls'));
     }
 
-    public function show($name, Place $place)
+    public function show(Place $place)
     {
         $place = $place->load('foods');
         $orthers = Place::where([

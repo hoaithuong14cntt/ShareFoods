@@ -57,13 +57,13 @@
                   <img class="img" src="{{ $placeInterested->image }}" alt="">
                   <div class="hover-view">
                     <div class="view">
-                      <a class="btn-view" href="{{ route('sharefood.show', ['name' => str_slug($placeInterested->name), 'place' => $placeInterested->id]) }}"><i class="fa fa-eye"></i></a>
+                      <a class="btn-view" href="{{ route('sharefood.show', ['place' => $placeInterested->id]) }}"><i class="fa fa-eye"></i></a>
                     </div>
                   </div>
                 </div>
                 <div class="ctn-product">
                   <div class="info">
-                    <h3><a href="{{ route('sharefood.show', ['name' => str_slug($placeInterested->name), 'place' => $placeInterested->id]) }}">{{ $placeInterested->name }}</a></h3>
+                    <h3><a href="{{ route('sharefood.show', ['place' => $placeInterested->id]) }}">{{ $placeInterested->name }}</a></h3>
                     <p class="address">{{ $placeInterested->address }}</p>
                   </div>
                   <div class="parameter">
