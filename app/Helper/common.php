@@ -21,3 +21,14 @@ if (!function_exists('active')) {
         }
     }
 }
+
+if (!function_exists('activeUser')) {
+    function activeUser($value)
+    {
+        if (App\User::STATUS['active'] == $value) {
+            return 'Không duyệt';
+        } else {
+            return 'Duyệt';
+        }
+    }
+}

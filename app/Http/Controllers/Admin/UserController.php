@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\User;
+use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
@@ -12,6 +13,14 @@ class UserController extends Controller
         $users = User::where('type', User::TYPES['user'])->paginate();
 
         return view('admin.users.index', compact('users'));
+    }
+
+    public function show(Request $request, $id)
+    {
+        dump($request->status);
+        $user = User::find($id);
+
+        return view('admin.users.show', compact('user'));
     }
 
     public function destroy($user)
