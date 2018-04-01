@@ -48,11 +48,11 @@
       <div class="row">
         <div class="collapse navbar-collapse header-navbar">
           <ul class="nav navbar-nav ">
-            <li class="item-menu active"><a href="">home</a></li>
+            <li class="item-menu active"><a href="{{ route('sharefood.index') }}">home</a></li>
             <li class="item-menu"><a href="#interested">interested</a></li>
             <li class="item-menu"><a href="#news">news</a></li>
             <li class="item-menu"><a href="#aboutUs">about us</a></li>
-            <li class="item-menu"><a href="contact.html">contact</a></li>
+            <li class="item-menu"><a href="{{ route('sharefood.contact') }}">contact</a></li>
             <li class="item-menu"><a href="advanced-search.html">search</a></li>
           </ul>
         </div>

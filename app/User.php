@@ -22,6 +22,16 @@ class User extends Authenticatable
         'admin' => 3,
     ];
 
+    const GENDERS = [
+        'male' => 1,
+        'female' => 2,
+    ];
+
+    const STATUS = [
+        'inactive' => 0,
+        'active' => 1,
+    ];
+
     protected $fillable = ['email', 'password', 'firstname', 'lastname', 'date_of_birth', 'gender', 'address', 'avatar', 'phone', 'prefecture_id'];
 
     /**

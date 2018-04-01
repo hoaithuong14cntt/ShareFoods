@@ -13,21 +13,19 @@
             <div class="item-infor col-md-4 col-xs-4">
               <span><i class="fa fa-map-marker"></i></span>
               <div class="text">
-                <p>242 Nguyễn Hoàng, Đà Nẵng, Việt Nam</p>
+                <p>344 Đường 2 tháng 9, quận Hải Châu, Tp Đà Nẵng</p>
               </div>
             </div>
             <div class="item-infor col-md-4 col-xs-4">
               <span><i class="fa fa-phone"></i></span>
               <div class="text">
-                <p>01282143365</p>
-                <p>0905594382</p>
+                <p>0905674086</p>
               </div>
             </div>
             <div class="item-infor col-md-4 col-xs-4">
               <span><i class="fa fa-envelope"></i></span>
               <div class="text">
-                <p>hieutran040495@gmail.com</p>
-                <p>tthieu040495@gmail.com</p>
+                <p>mail</p>
               </div>
             </div>
             <div class="clearfix"></div>
