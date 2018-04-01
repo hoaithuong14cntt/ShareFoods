@@ -7,6 +7,11 @@ use Storage;
 
 class Place extends Model
 {
+    const STATUS = [
+        'unpublished' => 0,
+        'published' => 1,
+    ];
+
     protected static function boot()
     {
         parent::boot();

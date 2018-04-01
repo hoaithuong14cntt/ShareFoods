@@ -18,7 +18,7 @@ class AuthController extends Controller
         if (Auth::attempt($credentials)) {
             $user = Auth::user();
             if ($user->is_admin) {
-                dd('admin');
+                return redirect()->route('admin.index');
             } else {
                 // $request->session()->flash('msg', trans('auth.noaccess'));
 
