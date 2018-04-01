@@ -57,6 +57,11 @@ class User extends Authenticatable
         return self::TYPES['user'] == $this->type;
     }
 
+    public function getFullnameAttribute()
+    {
+        return $this->lastname . ' ' . $this->firstname;
+    }
+
     public function getIsStaffAttribute()
     {
         return self::TYPES['staff'] == $this->type;
