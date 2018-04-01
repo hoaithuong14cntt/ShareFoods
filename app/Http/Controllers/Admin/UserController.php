@@ -13,4 +13,17 @@ class UserController extends Controller
 
         return view('admin.users.index', compact('users'));
     }
+
+    public function destroy($user)
+    {
+        $user = User::find($user);
+
+        if (!empty($user)) {
+            if ($user->delete()) {
+                return redirect()->route('admin.users.index');
+            }
+        } else {
+            return 'co loi xay ra';
+        }
+    }
 }

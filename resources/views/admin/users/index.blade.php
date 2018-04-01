@@ -2,6 +2,7 @@
 @section('admin.content')
 <!-- start: Content -->
 <div class="col-md-10 col-sm-11 main ">
+  @include('admin.partials.notification')
   <div class="row">
     <div class="col-lg-12">
       <div class="panel panel-default">
@@ -38,7 +39,7 @@
                   <a class="btn btn-info" href="table.html#">
                   <i class="fa fa-edit "></i>
                   </a>
-                  <a class="btn btn-danger" href="table.html#">
+                  <a class="btn btn-danger" href="{{ route('admin.users.destroy', ['user' => $user->id]) }}">
                   <i class="fa fa-trash-o "></i>
                   </a>
                 </td>
