@@ -19,9 +19,9 @@
               </tr>
             </thead>
             <tbody>
-            @foreach($users as $user)
+            @foreach($users as $key => $user)
               <tr>
-                <td>1</td>
+                <td>{{ $users->firstItem() +$key }}</td>
                 <td>{{$user->email}}</td>
                 <td>{{ $user->fullname }}</td>
                 <td>
@@ -46,6 +46,11 @@
               @endforeach
               </tbody>
           </table>
+          <div class="pagination-outter">
+            <ul class="pagination">
+              {{ $users->appends(request()->all())->links() }}
+            </ul>
+          </div>
         </div>
       </div>
     </div>
