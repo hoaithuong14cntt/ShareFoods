@@ -35,22 +35,12 @@
               <h3>SEND A MESSAGE</h3>
             </div>
             <div class="ctn-mess">
-              <form class="form-border-color" action="" data-toggle="validator" role="form">
+              <form class="form-border-color" action="{{ route('sharefood.send_contact') }}" method="POST" data-toggle="validator" role="form">
+                {{ csrf_field() }}
                 <div class="row">
-                  <div class="col-md-4 col-xs-4 item-ctn-mess">
+                  <div class="col-md-12 item-ctn-mess">
                     <div class="form-group">
-                      <input type="text" class="form-control" id="name" placeholder="Name">
-                    </div>
-                  </div>
-                  <div class="col-md-4 col-xs-4 item-ctn-mess">
-                    <div class="form-group">
-                      <input type="email" class="form-control" id="email" placeholder="Email" required>
-                      <div class="help-block with-errors"></div>
-                    </div>
-                  </div>
-                  <div class="col-md-4 col-xs-4 item-ctn-mess">
-                    <div class="form-group">
-                      <input type="text" class="form-control" id="phone" placeholder="Phone">
+                      <input type="text" class="form-control" name="title" id="name" placeholder="Title">
                     </div>
                   </div>
                   <div class="clearfix"></div>
@@ -58,7 +48,7 @@
                 <div class="row textarea">
                   <div class="col-md-12 item-ctn-mess">
                     <div class="form-group">
-                      <textarea rows="5" class="form-control" placeholder="Message" value="" required></textarea>
+                      <textarea rows="5" class="form-control" name="content" placeholder="Content" value="" required></textarea>
                       <div class="help-block with-errors"></div>
                     </div>
                   </div>

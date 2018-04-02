@@ -86,4 +86,9 @@ class User extends Authenticatable
     {
         return $this->belongsToMany(Place::class, 'saves', 'user_id', 'place_id');
     }
+
+    public function contacts()
+    {
+        return $this->hasMany(Contact::class, 'user_id');
+    }
 }

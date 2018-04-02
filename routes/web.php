@@ -20,6 +20,7 @@ Route::group(['namespace' => 'Sharefood', 'as' => 'sharefood.'], function () {
     });
     Route::get('/', ['as' => 'index', 'uses' => 'HomeController@index']);
     Route::get('contact', ['as' => 'contact', 'uses' => 'HomeController@contact']);
+    Route::post('contact', ['as' => 'send_contact', 'uses' => 'HomeController@sendContact']);
     Route::get('search', ['as' => 'search', 'uses' => 'HomeController@search']);
     Route::get('all', ['as' => 'all', 'uses' => 'AllPlacesController@index']);
     Route::get('place/{place}', ['as' => 'show', 'uses' => 'AllPlacesController@show'])->where('place', '[0-9]+');
