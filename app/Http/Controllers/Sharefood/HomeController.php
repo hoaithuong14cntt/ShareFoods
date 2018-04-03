@@ -45,8 +45,10 @@ class HomeController extends Controller
                 'address' => $user->address,
             ];
 
-            // Contact::created($contact);
             Mail::to($contact['email'])->send(new SendMail($contact));
+
+            $user->contacts()->create($input);
+
             return view('share_foods.contact');
         }
     }

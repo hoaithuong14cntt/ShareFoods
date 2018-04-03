@@ -2,9 +2,18 @@
 
 namespace App;
 
-use Illuminate\Database\Eloquent\Model;
+use App\Traits\HasParentModel;
 
-class Staff extends Model
+class Staff extends User
 {
-    //
+    use HasParentModel;
+
+    public static function boot()
+    {
+        parent::boot();
+
+        static::addGlobalScope(function ($query) {
+            $query->where('type', User::TYPES['staff']);
+        });
+    }
 }

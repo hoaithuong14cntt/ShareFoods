@@ -21,3 +21,14 @@ if (!function_exists('active')) {
         }
     }
 }
+
+if (!function_exists('published')) {
+    function published($value)
+    {
+        if (App\Place::STATUS['published'] == $value) {
+            return '<i class="fa fa-toggle-on"></i>';
+        } else {
+            return '<i class="fa fa-toggle-off"></i>';
+        }
+    }
+}

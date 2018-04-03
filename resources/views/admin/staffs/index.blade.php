@@ -21,18 +21,18 @@
               </tr>
             </thead>
             <tbody>
-            @foreach($users as $key => $user)
+            @foreach($staffs as $key => $staff)
               <tr>
-                <td>{{ $users->firstItem() +$key }}</td>
-                <td>{{$user->email}}</td>
-                <td>{{ $user->fullname }}</td>
-                <td><img src="{{ $user->avatar }}" alt="" class="image-index"></td>
+                <td>{{ $staffs->firstItem() +$key }}</td>
+                <td>{{$staff->email}}</td>
+                <td>{{ $staff->fullname }}</td>
+                <td><img src="{{ $staff->avatar }}" alt="" class="image-index"></td>
                 <td>
-                  <span class="label label-success">{!!gender($user->gender)!!}</span>
+                  <span class="label label-success">{!!gender($staff->gender)!!}</span>
                 </td>
-                <td>{{ $user->created_at }}</td>
+                <td>{{ $staff->created_at }}</td>
                 <td>
-                  {!! active($user->status) !!}
+                  {!! active($staff->status) !!}
                 </td>
                 <td>
                   <a class="btn btn-success" href="table.html#">
@@ -41,7 +41,7 @@
                   <a class="btn btn-info" href="table.html#">
                   <i class="fa fa-edit "></i>
                   </a>
-                  <a class="btn btn-danger" href="{{ route('admin.users.destroy', ['user' => $user->id]) }}">
+                  <a class="btn btn-danger" href="{{ route('admin.staffs.destroy', ['staff' => $staff->id]) }}">
                   <i class="fa fa-trash-o "></i>
                   </a>
                 </td>
@@ -51,7 +51,7 @@
           </table>
           <div class="pagination-outter">
             <ul class="pagination">
-              {{ $users->appends(request()->all())->links() }}
+              {{ $staffs->appends(request()->all())->links() }}
             </ul>
           </div>
         </div>
