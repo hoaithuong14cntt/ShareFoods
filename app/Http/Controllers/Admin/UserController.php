@@ -23,9 +23,19 @@ class UserController extends Controller
 
         $tabs = $request->only('tab');
         $tab = 'favorites';
-        if (!empty($tab)) {
+        if (!empty($tabs)) {
             $tab = $tabs['tab'];
         }
+
+        $status = $request->only('status');
+
+        if (!empty($status) && (0 == $status['status'])) {
+            $user->status = 1;
+        } else {
+            $user->status = 0;
+        }
+
+        $user->save();
 
         return view('admin.users.show', compact('user', 'numSave', 'numFavorite', 'numFollowStaff', 'tab'));
     }

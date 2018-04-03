@@ -26,7 +26,7 @@
                 <td>{{ $places->firstItem() +$key }}</td>
                 <td>{{$place->id}}</td>
                 <td>{{ $place->name }}</td>
-                <td><img src="{{ $place->image }}" alt=""></td>
+                <td><img src="{{ $place->image }}" alt="" class="image-index"></td>
                 <td>{{ $place->discount }}</td>
                 <td>
                   <span class="label label-success">{!!published($place->is_published)!!}</span>
