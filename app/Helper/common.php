@@ -32,3 +32,14 @@ if (!function_exists('published')) {
         }
     }
 }
+
+if (!function_exists('changeStatus')) {
+    function changeStatus($value)
+    {
+        if (App\User::STATUS['inactive'] == $value) {
+            return 'Duyệt';
+        } else {
+            return 'Vô hiệu';
+        }
+    }
+}

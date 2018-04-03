@@ -16,4 +16,9 @@ class Staff extends User
             $query->where('type', User::TYPES['staff']);
         });
     }
+
+    public function followers()
+    {
+        return $this->belongsToMany(User::class, 'follows', 'followed_id', 'user_id')->withPivot('id');
+    }
 }

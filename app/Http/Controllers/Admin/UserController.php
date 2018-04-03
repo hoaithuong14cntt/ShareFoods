@@ -17,7 +17,17 @@ class UserController extends Controller
 
     public function show(Request $request, User $user)
     {
-        return view('admin.users.show', compact('users'));
+        $numSave = $user->notes()->count();
+        $numFavorite = $user->favorites()->count();
+        $numFollowStaff = $user->follows()->count();
+
+        $tabs = $request->only('tab');
+        $tab = 'favorites';
+        if (!empty($tab)) {
+            $tab = $tabs['tab'];
+        }
+
+        return view('admin.users.show', compact('user', 'numSave', 'numFavorite', 'numFollowStaff', 'tab'));
     }
 
     public function destroy($user)

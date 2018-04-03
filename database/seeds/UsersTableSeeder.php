@@ -25,7 +25,7 @@ class UsersTableSeeder extends Seeder
                 'gender' => rand(1, 2),
                 'prefecture_id' => $faker->randomElement(Prefecture::all()->pluck('id')->toArray()),
                 'address' => $faker->address,
-                'memo' => null,
+                'memo' => $faker->text,
                 'avatar' => $faker->image('public/storage/', 400, 300, null, false),
                 'phone' => '0905123456',
                 'status' => rand(0, 1),

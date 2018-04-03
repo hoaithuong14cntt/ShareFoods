@@ -74,7 +74,7 @@ class User extends Authenticatable
 
     public function favorites()
     {
-        return $this->belongsToMany(Design::class, 'favorites', 'user_id', 'favorited_id');
+        return $this->belongsToMany(Place::class, 'favorites', 'user_id', 'favorited_id');
     }
 
     public function comments()
@@ -90,5 +90,10 @@ class User extends Authenticatable
     public function contacts()
     {
         return $this->hasMany(Contact::class, 'user_id');
+    }
+
+    public function follows()
+    {
+        return $this->belongsToMany(Staff::class, 'follows', 'user_id', 'followed_id')->withPivot('id', 'created_at', 'updated_at');
     }
 }
