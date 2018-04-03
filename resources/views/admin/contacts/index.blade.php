@@ -11,29 +11,21 @@
             <thead>
               <tr>
                 <th>No.</th>
-                <th>Email</th>
-                <th>Họ tên</th>
-                <th>Avatar</th>
-                <th>Giới tính</th>
-                <th>Ngày đăng kí</th>
-                <th>Trạng thái</th>
+                <th>User ID</th>
+                <th>Tiêu đề</th>
+                <th>Nội dung</th>
+                <th>Ngày tạo</th>
                 <th></th>
               </tr>
             </thead>
             <tbody>
-            @foreach($users as $key => $user)
+            @foreach($contacts as $key => $contact)
               <tr>
-                <td>{{ $users->firstItem() +$key }}</td>
-                <td>{{$user->email}}</td>
-                <td>{{ $user->fullname }}</td>
-                <td><img src="{{ $user->avatar }}" alt="" class="image-index"></td>
-                <td>
-                  <span class="label label-success">{!!gender($user->gender)!!}</span>
-                </td>
-                <td>{{ $user->created_at }}</td>
-                <td>
-                  {!! active($user->status) !!}
-                </td>
+                <td>{{ $contacts->firstItem() +$key }}</td>
+                <td>{{$contact->user_id}}</td>
+                <td>{{ $contact->title }}</td>
+                <td><img src="{{ $contact->content }}" alt=""></td>
+                <td>{{ $contact->created_at }}</td>
                 <td>
                   <a class="btn btn-success" href="table.html#">
                   <i class="fa fa-search-plus "></i>
@@ -41,7 +33,7 @@
                   <a class="btn btn-info" href="table.html#">
                   <i class="fa fa-edit "></i>
                   </a>
-                  <a class="btn btn-danger" href="{{ route('admin.users.destroy', ['user' => $user->id]) }}">
+                  <a class="btn btn-danger" href="{{ route('admin.contacts.destroy', ['contact' => $contact->id]) }}">
                   <i class="fa fa-trash-o "></i>
                   </a>
                 </td>
@@ -51,7 +43,7 @@
           </table>
           <div class="pagination-outter">
             <ul class="pagination">
-              {{ $users->appends(request()->all())->links() }}
+              {{ $contacts->appends(request()->all())->links() }}
             </ul>
           </div>
         </div>
