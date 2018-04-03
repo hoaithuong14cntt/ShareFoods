@@ -27,5 +27,7 @@ class ContactsTableSeeder extends Seeder
                 'updated_at' => Carbon::now(),
             ];
         }
+
+        DB::table('contacts')->insert($datas);
     }
 }

@@ -3,13 +3,12 @@
 namespace App\Http\Controllers\Sharefood;
 
 use App\Contact;
-// use App\Mail\SendMail;
 use App\Http\Controllers\Controller;
+use App\Mail\SendMail;
 use App\Place;
 use Auth;
-
-// use Illuminate\Support\Facades\Mail;
 use Illuminate\Http\Request;
+use Mail;
 
 class HomeController extends Controller
 {
@@ -35,15 +34,19 @@ class HomeController extends Controller
     {
         $user = Auth::user();
         if ($user) {
-            $contact = request()->only('title', 'content');
+            $input = request()->only('title', 'content');
             $contact = [
+                'name' => $user->lastname . " " . $user->firstname,
+                'email' => $user->email,
                 'user_id' => $user->id,
-                'title' => $contact['title'],
-                'content' => $contact['content'],
+                'title' => $input['title'],
+                'content' => $input['content'],
+                'phone' => $user->phone,
+                'address' => $user->address,
             ];
 
-            Contact::created($contact);
-            // Mail::to($contact['email'])->send(new SendMail($contact));
+            // Contact::created($contact);
+            Mail::to($contact['email'])->send(new SendMail($contact));
             return view('share_foods.contact');
         }
     }
