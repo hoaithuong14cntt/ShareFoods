@@ -3,9 +3,9 @@
 <!-- start: Content -->
 <div class="col-md-10 col-sm-11 main ">
   <ol class="breadcrumb">
-    <li><a href="page-profile.html#">Genius</a></li>
-    <li><a href="page-profile.html#">Example Pages</a></li>
-    <li class="active">Profile</li>
+    <li><a href="{{ route('admin.users.index') }}">User</a></li>
+    <li><a href="">Profile</a></li>
+    <li class="active">{{ $user->fullname }}</li>
   </ol>
   <div class="row profile">
     <div class="col-md-3">
@@ -17,7 +17,7 @@
           <hr>
           <div class="row">
             <div class="col-xs-12">
-              <button type="button" class="btn btn-success btn-block">{{ changeStatus($user->status) }}</button>
+              <a href="{{ route('admin.users.show', ['user' => $user->id, 'status' => $user->status]) }}" title=""><button type="button" class="btn btn-success btn-block">{{ changeStatus($user->status) }}</button></a>
             </div>
             <!--/.col-->
           </div>
@@ -73,8 +73,11 @@
             <li><a href="{{ route('admin.users.show', ['user' => $user->id, 'tab' => 'notes']) }}">Save Place</a></li>
           </ul>
         </div>
-
+        @if($tab == 'follows')
+        @include('admin.partials.tabs_follows', compact('user', 'tab'))
+        @else
         @include('admin.partials.tabs', compact('user', 'tab'))
+        @endif
       </div>
     </div>
   </div>
