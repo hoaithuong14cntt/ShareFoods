@@ -1,9 +1,10 @@
 <?php
-Route::group(['as' => 'admin.'], function () {
+Route::group(['middleware' => 'auth', 'as' => 'admin.'], function () {
     Route::get('/', ['as' => 'index', 'uses' => 'HomeController@index']);
     Route::group(['prefix' => 'users', 'as' => 'users.'], function () {
         Route::get('/', ['as' => 'index', 'uses' => 'UserController@index']);
-        Route::get('{id}', ['as' => 'destroy', 'uses' => 'UserController@destroy']);
+        Route::get('{user}', ['as' => 'show', 'uses' => 'UserController@show'])->where('user', '[0-9]+');
+        Route::get('{id}/delete', ['as' => 'destroy', 'uses' => 'UserController@destroy']);
     });
 
     Route::group(['prefix' => 'staffs', 'as' => 'staffs.'], function () {
