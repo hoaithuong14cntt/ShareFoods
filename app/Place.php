@@ -39,6 +39,11 @@ class Place extends Model
         return $this->belongsToMany(User::class, 'comments', 'place_id', 'user_id');
     }
 
+    public function cmt()
+    {
+        return $this->hasMany(Comment::class);
+    }
+
     public function saves()
     {
         return $this->belongsToMany(User::class, 'saves', 'place_id', 'user_id');

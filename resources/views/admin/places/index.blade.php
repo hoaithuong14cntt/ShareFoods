@@ -33,13 +33,13 @@
                 </td>
                 <td>{{ $place->created_at }}</td>
                 <td>
-                  <a class="btn btn-success" href="table.html#">
+                  <a class="btn btn-success" href="{{ route('admin.places.show', ['place' => $place->id]) }}">
                   <i class="fa fa-search-plus "></i>
                   </a>
                   <a class="btn btn-info" href="table.html#">
                   <i class="fa fa-edit "></i>
                   </a>
-                  <a class="btn btn-danger" href="{{ route('admin.places.destroy', ['id' => $place->id]) }}">
+                  <a class="btn btn-danger" href="{{ route('admin.places.destroy', ['place' => $place->id]) }}">
                   <i class="fa fa-trash-o "></i>
                   </a>
                 </td>

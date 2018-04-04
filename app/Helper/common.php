@@ -33,6 +33,17 @@ if (!function_exists('published')) {
     }
 }
 
+if (!function_exists('chanePublished')) {
+    function chanePublished($value)
+    {
+        if (App\Place::STATUS['published'] == $value) {
+            return 'Vô hiệu';
+        } else {
+            return 'Duyệt';
+        }
+    }
+}
+
 if (!function_exists('changeStatus')) {
     function changeStatus($value)
     {
