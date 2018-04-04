@@ -46,7 +46,7 @@ class Place extends Model
 
     public function saves()
     {
-        return $this->belongsToMany(User::class, 'saves', 'place_id', 'user_id');
+        return $this->belongsToMany(User::class, 'saves', 'place_id', 'user_id')->withPivot('id', 'created_at', 'updated_at');
     }
 
     public function getImageAttribute($value)

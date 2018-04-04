@@ -31,4 +31,6 @@ Route::group(['namespace' => 'Sharefood', 'as' => 'sharefood.'], function () {
         Route::get('change-password/{user}', ['as' => 'changePassword', 'uses' => 'ProfileController@changePassword']);
         Route::get('save/{user}', ['as' => 'save', 'uses' => 'ProfileController@save'])->where('user', '[0-9]+');
     });
+
+    Route::post('save', ['as' => 'save', 'uses' => 'AllPlacesController@save']);
 });

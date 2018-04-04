@@ -48,12 +48,15 @@
                 <p class="item phone "><i class="fa fa-phone"></i>{{ $place->phone }}</p>
                 <p class="item time "><i class="fa fa-clock-o"></i>{{ $place->start_time }} - {{ $place->end_time }}</p>
                 <div class="item features">
-                  <form>
+                  <form action="{{ route('sharefood.save') }}" method="POST">
+                  {{csrf_field()}}
                     <div class="item-feature save">
                       <div class="form-group">
+                        <input type="hidden" name="place_id" value="{{ $place->id }}">
                         <input type="submit" class=" btn btn-bg" value="Save" />
                       </div>
                     </div>
+                  </form>
                     <div class="item-feature rate">
                       <div class="form-group">
                         <a href="" class="btn btn-bg" data-toggle="modal" data-target="#modal-rating">Rate</a>
@@ -69,21 +72,21 @@
                               <h4 class="modal-title">Rating</h4>
                             </div>
                             <div class="modal-body">
-                  <form role="form" name="form-rate" id="form-rate" class="form-horizontal" enctype="multipart/form-data" method="POST">
-                  <div class="col-md-12">
-                  <div class="form-group item">
-                  <div class="rating"></div>
-                  <input id="input-rate" type="text">
-                  </div>
-                  </div>
-                  <div class="col-md-12">
-                  <div class="form-group button-action">
-                  <input type="submit" class=" btn btn-bg" value="Send" />
-                  </div>
-                  </div>
-                  <div class="clearfix"></div>
-                  </form>
-                  </div>
+                              <form role="form" name="form-rate" id="form-rate" class="form-horizontal" enctype="multipart/form-data" method="POST">
+                                <div class="col-md-12">
+                                  <div class="form-group item">
+                                    <div class="rating"></div>
+                                    <input id="input-rate" type="text">
+                                  </div>
+                                </div>
+                                <div class="col-md-12">
+                                  <div class="form-group button-action">
+                                    <input type="submit" class=" btn btn-bg" value="Send" />
+                                  </div>
+                                </div>
+                                <div class="clearfix"></div>
+                              </form>
+                            </div>
                   </div>
                   </div>
                   </div>
