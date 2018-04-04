@@ -17,7 +17,7 @@ class PlacesTableSeeder extends Seeder
 
         for ($i = 0; $i < $limit; $i++) {
             DB::table('places')->insert([
-                'user_id' => $faker->randomElement(App\User::all()->pluck('id')->toArray()),
+                'user_id' => $faker->randomElement(App\Staff::all()->pluck('id')->toArray()),
                 'category_id' => $faker->randomElement(App\Category::all()->pluck('id')->toArray()),
                 'prefecture_id' => $faker->randomElement(App\Prefecture::all()->pluck('id')->toArray()),
                 'name' => $faker->company,

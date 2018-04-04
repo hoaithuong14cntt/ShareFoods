@@ -1,6 +1,6 @@
 <div class="panel-body">
   @php
-    $staff = $staff->followers()->paginate();
+    $user = $user->follows()->paginate();
   @endphp
 
   <table class="table table-striped table-bordered bootstrap-datatable datatable">
@@ -14,22 +14,22 @@
       </tr>
     </thead>
     <tbody>
-    @foreach($staff as $key => $value)
+    @foreach($user as $key => $value)
       <tr>
-        <td>{{ $staff->firstItem() +$key }}</td>
+        <td>{{ $user->firstItem() +$key }}</td>
         <td>{{$value->email}}</td>
         <td><img src="{{ $value->avatar }}" alt="" class="image-index"></td>
         <td>
           <span class="label label-success">{!!gender($value->gender)!!}</span>
         </td>
         <td>
-          <a class="btn btn-success" href="{{ route('admin.staffs.show', ['staff' => $value->id]) }}">
+          <a class="btn btn-success" href="{{ route('admin.users.show', ['user' => $value->id]) }}">
           <i class="fa fa-search-plus "></i>
           </a>
           <a class="btn btn-info" href="table.html#">
           <i class="fa fa-edit "></i>
           </a>
-          <a class="btn btn-danger" href="{{ route('admin.staffs.destroy', ['staff' => $value->id]) }}">
+          <a class="btn btn-danger" href="{{ route('admin.users.destroy', ['user' => $value->id]) }}">
           <i class="fa fa-trash-o "></i>
           </a>
         </td>
@@ -39,7 +39,7 @@
   </table>
   <div class="pagination-outter">
     <ul class="pagination">
-      {{ $staff->appends(request()->all())->links() }}
+      {{ $user->appends(request()->all())->links() }}
     </ul>
   </div>
 </div>

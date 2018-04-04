@@ -21,4 +21,9 @@ class Staff extends User
     {
         return $this->belongsToMany(User::class, 'follows', 'followed_id', 'user_id')->withPivot('id');
     }
+
+    public function places()
+    {
+        return $this->hasMany(Place::class);
+    }
 }
