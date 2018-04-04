@@ -22,14 +22,20 @@
                 <img src="{{ $place->image }}" alt="">
                 <div class="ribbon">
                   <p>
-                    <span>Sale</span> 50%
+                    <span>Sale</span> {{ $place->discount }}%
                   </p>
                 </div>
+                @php
+                $check = \Auth::user()->notes()->where('place_id',$place->id)->first();
+                @endphp
+
+                @if(!empty($check))
                 <div class="ribbon bookmark">
                   <p>
                     <span>Saved</span>
                   </p>
                 </div>
+                @endif
               </div>
             </div>
             <div class="col-md-7  col-xs-7 ctn">
@@ -87,10 +93,10 @@
                                 <div class="clearfix"></div>
                               </form>
                             </div>
-                  </div>
-                  </div>
-                  </div>
-                  </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                   <div class="clearfix"></div>
                   </form>
                 </div>
