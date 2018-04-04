@@ -15,11 +15,12 @@ Route::group(['middleware' => 'auth', 'as' => 'admin.'], function () {
 
     Route::group(['prefix' => 'places', 'as' => 'places.'], function () {
         Route::get('/', ['as' => 'index', 'uses' => 'PlaceController@index']);
-        Route::get('{id}', ['as' => 'destroy', 'uses' => 'PlaceController@destroy']);
+        Route::get('{place}', ['as' => 'show', 'uses' => 'PlaceController@show'])->where('place', '[0-9]+');
+        Route::get('{place}/delete', ['as' => 'destroy', 'uses' => 'PlaceController@destroy'])->where('place', '[0-9]+');
     });
 
     Route::group(['prefix' => 'contacts', 'as' => 'contacts.'], function () {
         Route::get('/', ['as' => 'index', 'uses' => 'ContactController@index']);
-        Route::get('{id}', ['as' => 'destroy', 'uses' => 'ContactController@destroy']);
+        Route::get('{comment}/delete', ['as' => 'destroy', 'uses' => 'ContactController@destroy']);
     });
 });
