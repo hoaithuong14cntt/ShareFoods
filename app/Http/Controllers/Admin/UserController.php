@@ -40,10 +40,8 @@ class UserController extends Controller
         return view('admin.users.show', compact('user', 'numSave', 'numFavorite', 'numFollowStaff', 'tab'));
     }
 
-    public function destroy($user)
+    public function destroy(User $user)
     {
-        $user = User::find($user);
-
         if (!empty($user)) {
             if ($user->delete()) {
                 return redirect()->route('admin.users.index');

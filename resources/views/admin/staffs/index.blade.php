@@ -35,7 +35,7 @@
                   {!! active($staff->status) !!}
                 </td>
                 <td>
-                  <a class="btn btn-success" href="table.html#">
+                  <a class="btn btn-success" href="{{ route('admin.staffs.show', ['staff' => $staff->id]) }}">
                   <i class="fa fa-search-plus "></i>
                   </a>
                   <a class="btn btn-info" href="table.html#">
