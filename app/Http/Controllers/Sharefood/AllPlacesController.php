@@ -29,13 +29,15 @@ class AllPlacesController extends Controller
 
     public function show(Place $place)
     {
+        $comments = Comment::with('user')->where('place_id', $place->id)->orderBy('created_at', 'DESC')->get();
+
         $place = $place->load('foods');
         $orthers = Place::where([
             ['category_id', '=', $place->category_id],
             ['id', '<>', $place->id],
         ])->get();
 
-        return view('share_foods.show', compact('place', 'orthers'));
+        return view('share_foods.show', compact('place', 'orthers', 'comments'));
     }
 
     public function save(Request $request)
