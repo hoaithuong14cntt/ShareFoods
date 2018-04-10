@@ -85,4 +85,19 @@ class AllPlacesController extends Controller
             return redirect()->route('sharefood.show', ['place' => $input['place_id']]);
         }
     }
+
+    public function search(Request $request)
+    {
+        $categories = Category::all();
+        $prefectures = Prefecture::all();
+
+        $keyword = $request->keyword;
+
+        if (isset($keyword)) {
+            $places = Place::where('name', 'like', "%$keyword%")
+                ->orWhere('address', 'like', "%$keyword%")->paginate();
+        }
+
+        return view('share_foods.search', compact('places', 'categories', 'prefectures'));
+    }
 }

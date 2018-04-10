@@ -14,7 +14,7 @@
               <div class="wrp">
                 <div class="features">
                   <nav>
-                    <form action="{{ route('all') }}" method="get" class="form-avatar">
+                    <form action="{{ route('sharefood.all') }}" method="get" class="form-avatar">
                       <ul class="nav">
                         <li class="type item">
                           <div class="form-group wrp-item">
