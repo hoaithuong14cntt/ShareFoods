@@ -26,7 +26,9 @@
                   </p>
                 </div>
                 @php
-                $check = \Auth::user()->notes()->where('place_id',$place->id)->first();
+                  if(Auth::user()) {
+                    $check = \Auth::user()->notes()->where('place_id',$place->id)->first();
+                  }
                 @endphp
 
                 @if(!empty($check))
@@ -59,7 +61,7 @@
                     <div class="item-feature save">
                       <div class="form-group">
                         <input type="hidden" name="place_id" value="{{ $place->id }}">
-                        <input type="submit" class=" btn btn-bg" value="Save" />
+                        <input type="submit" class=" btn btn-bg" name="save" value="Save" />
                       </div>
                     </div>
                   </form>
@@ -214,22 +216,26 @@
             <p class="underline"></p>
           </div>
           <div class="ctn-comments ctn-main">
+            @if(Auth::user())
             <div class="media input-cmt">
               <div class="media-left">
-                <img src="assets/img/user/h5.jpg" class="media-object">
+                <img src="{{ Auth::user()->avatar }}" class="media-object">
               </div>
               <div class="media-body">
-                <h4 class="media-heading">Hieu Tran <small><i>Posted on February 19, 2016</i></small></h4>
-                <form action="" class="form-border-color">
+                <h4 class="media-heading">{{ Auth::user()->firstname }}</h4>
+                <form action="{{ route('sharefood.comment') }}" method="POST" class="form-border-color">
+                  {{csrf_field()}}
                   <div class="form-group">
-                    <textarea class="form-control" rows="3" id="cmt"></textarea>
+                    <input type="hidden" name="place_id" value="{{ $place->id }}">
+                    <textarea class="form-control" name="content" rows="3" id="cmt"></textarea>
                   </div>
                   <div class="pull-right form-group">
-                    <input type="submit" class="btn btn-bg" value="Send">
+                    <input type="submit" class="btn btn-bg" name="cmt" value="Send">
                   </div>
                 </form>
               </div>
             </div>
+            @endif
             <div class="media">
               <div class="media-left">
                 <img src="assets/img/user/h5.jpg" class="media-object">

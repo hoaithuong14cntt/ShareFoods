@@ -79,7 +79,7 @@ class User extends Authenticatable
 
     public function comments()
     {
-        return $this->belongsToMany(Place::class, 'comments', 'user_id', 'place_id');
+        return $this->belongsToMany(Place::class, 'comments', 'user_id', 'place_id')->withPivot('id', 'content', 'created_at', 'updated_at');
     }
 
     public function notes()

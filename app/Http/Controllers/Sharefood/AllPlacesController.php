@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Sharefood;
 
+use App\Comment;
 use App\Http\Controllers\Controller;
 use App\Place;
 use App\Save;
@@ -39,19 +40,47 @@ class AllPlacesController extends Controller
 
     public function save(Request $request)
     {
-        $check = Save::where([
-            ['user_id', '=', Auth::user()->id],
-            ['place_id', '=', $request->place_id],
-        ])->get();
+        if (request()->has('save')) {
+            $check = Save::where([
+                ['user_id', '=', Auth::user()->id],
+                ['place_id', '=', $request->place_id],
+            ])->get();
 
-        if (!$check->first()) {
-            $place = Place::find($request->place_id);
+            if (!$check->first()) {
+                $place = Place::find($request->place_id);
 
-            $place->saves()->attach(Auth::user()->id);
+                $place->saves()->attach(Auth::user()->id);
 
-            return redirect()->route('sharefood.show', ['place' => $place->id]);
-        } else {
-            dd('Da ton tai');
+                return redirect()->route('sharefood.show', ['place' => $place->id]);
+            } else {
+                dd('Da ton tai');
+            }
+        }
+    }
+
+    public function comment(Request $request)
+    {
+        if (request()->has('cmt')) {
+            $rules = [
+                'content' => 'required',
+            ];
+
+            $validator = validator(request()->all(), $rules);
+
+            if ($validator->fails()) {
+                return $validator->errors()->messages();
+            }
+
+            $input = request()->only([
+                'content',
+                'place_id',
+            ]);
+
+            $input['user_id'] = Auth::user()->id;
+
+            Comment::create($input);
+
+            return redirect()->route('sharefood.show', ['place' => $input['place_id']]);
         }
     }
 }
