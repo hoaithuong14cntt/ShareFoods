@@ -236,24 +236,17 @@
               </div>
             </div>
             @endif
+            @foreach($comments as $comment)
             <div class="media">
               <div class="media-left">
-                <img src="assets/img/user/h5.jpg" class="media-object">
+                <img src="{{ $comment->user->avatar }}" class="media-object">
               </div>
               <div class="media-body">
-                <h4 class="media-heading">Hieu Tran <small><i>Posted on February 19, 2016</i></small></h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                <h4 class="media-heading">{{ $comment->user->firstname }} <small><i>Posted on {{ $comment->created_at }}</i></small></h4>
+                <p>{{ $comment->content }}</p>
               </div>
             </div>
-            <div class="media">
-              <div class="media-left">
-                <img src="assets/img/user/h5.jpg" class="media-object">
-              </div>
-              <div class="media-body">
-                <h4 class="media-heading">Hieu Tran <small><i>Posted on February 19, 2016</i></small></h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-              </div>
-            </div>
+            @endforeach
           </div>
         </div>
       </div>
