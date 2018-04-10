@@ -24,6 +24,7 @@ Route::group(['namespace' => 'Sharefood', 'as' => 'sharefood.'], function () {
     Route::get('search', ['as' => 'search', 'uses' => 'HomeController@search']);
     Route::get('all', ['as' => 'all', 'uses' => 'AllPlacesController@index']);
     Route::get('place/{place}', ['as' => 'show', 'uses' => 'AllPlacesController@show'])->where('place', '[0-9]+');
+    Route::post('comment', ['as' => 'comment', 'uses' => 'AllPlacesController@comment']);
 
     Route::group(['prefix' => 'profile', 'as' => 'profile.'], function () {
         Route::get('{user}', ['as' => 'index', 'uses' => 'ProfileController@index'])->where('user', '[0-9]+');
