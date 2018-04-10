@@ -21,10 +21,12 @@ Route::group(['namespace' => 'Sharefood', 'as' => 'sharefood.'], function () {
     Route::get('/', ['as' => 'index', 'uses' => 'HomeController@index']);
     Route::get('contact', ['as' => 'contact', 'uses' => 'HomeController@contact']);
     Route::post('contact', ['as' => 'send_contact', 'uses' => 'HomeController@sendContact']);
-    Route::get('search', ['as' => 'search', 'uses' => 'HomeController@search']);
+    Route::get('search', ['as' => 'searchAll', 'uses' => 'HomeController@search']);
+    Route::post('smartSearch', ['as' => 'smartSearch', 'uses' => 'HomeController@smartSearch']);
     Route::get('all', ['as' => 'all', 'uses' => 'AllPlacesController@index']);
     Route::get('place/{place}', ['as' => 'show', 'uses' => 'AllPlacesController@show'])->where('place', '[0-9]+');
     Route::post('comment', ['as' => 'comment', 'uses' => 'AllPlacesController@comment']);
+    Route::post('search', ['as' => 'search', 'uses' => 'AllPlacesController@search']);
 
     Route::group(['prefix' => 'profile', 'as' => 'profile.'], function () {
         Route::get('{user}', ['as' => 'index', 'uses' => 'ProfileController@index'])->where('user', '[0-9]+');

@@ -12,10 +12,15 @@
             <a data-toggle="collapse" data-target=".header-navbar" class="btn-toggle"><i class="fa fa-bars"></i></a>
           </div>
           <div class="search col-md-6 col-sm-6 item">
-            <div class="input-group ">
-              <input type="text" class="form-control" id="inputSearch" placeholder="">
-              <div class="input-group-addon"><a href=""><i class="fa fa-search" aria-hidden="true"></i></a></div>
-            </div>
+            <form action="{{ route('sharefood.search') }}" method="POST">
+              {{csrf_field()}}
+              <div class="input-group">
+                <input type="text" class="form-control" name="keyword" placeholder="Search for...">
+                <span class="input-group-btn">
+                  <button class="btn btn-default" type="submit">Go!</button>
+                </span>
+              </div>
+            </form>
           </div>
           <div class="user-features col-md-6 col-sm-6 item">
           @if(Auth::check())
@@ -53,7 +58,7 @@
             <li class="item-menu"><a href="#news">news</a></li>
             <li class="item-menu"><a href="#aboutUs">about us</a></li>
             <li class="item-menu"><a href="{{ route('sharefood.contact') }}">contact</a></li>
-            <li class="item-menu"><a href="advanced-search.html">search</a></li>
+            <li class="item-menu"><a href="{{ route('sharefood.search') }}">search</a></li>
           </ul>
         </div>
       </div>

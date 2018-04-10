@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers\Sharefood;
 
+use App\Category;
 use App\Contact;
 use App\Http\Controllers\Controller;
 use App\Mail\SendMail;
 use App\Place;
+use App\Prefecture;
 use Auth;
 use Illuminate\Http\Request;
 use Mail;
@@ -22,7 +24,46 @@ class HomeController extends Controller
 
     public function search()
     {
-        return view('share_foods.search');
+        $categories = Category::all();
+        $prefectures = Prefecture::all();
+        $places = Place::where('is_published', 1)->paginate();
+
+        return view('share_foods.search', compact('places', 'categories', 'prefectures'));
+    }
+
+    public function smartSearch(Request $request)
+    {
+        $categories = Category::all();
+        $prefectures = Prefecture::all();
+
+        $keyword = $request->keyword;
+        $prefecture_id = $request->prefecture_id;
+        $category_id = $request->category_id;
+
+        $places = Place::where('is_published', 1);
+
+        if (0 != $keyword) {
+            $places->where(function ($query) use ($category_id) {
+                $query->where('category_id', $category_id);
+            });
+        }
+
+        if (0 != $prefecture_id) {
+            $places->where(function ($query) use ($prefecture_id) {
+                $query->where('prefecture_id', $prefecture_id);
+            });
+        }
+
+        if (isset($keyword)) {
+            $places->where(function ($query) use ($keyword) {
+                $query->where('name', 'like', "%$keyword%")
+                    ->orWhere('address', 'like', "%$keyword%");
+            });
+        }
+
+        $places = $places->paginate();
+
+        return view('share_foods.search', compact('places', 'categories', 'prefectures'));
     }
 
     public function contact()
