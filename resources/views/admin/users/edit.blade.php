@@ -45,6 +45,12 @@
               </div>
             </div>
             <div class="form-group">
+              <label class="col-md-3 control-label" for="disabled-input">Type</label>
+              <div class="col-md-9">
+                <input type="text" id="disabled-input" name="type" class="form-control" placeholder="Type" value="{{ $user->type }}">
+              </div>
+            </div>
+            <div class="form-group">
               <label class="col-md-3 control-label" for="disabled-input">Lastname</label>
               <div class="col-md-9">
                 <input type="text" id="disabled-input" name="lastname" class="form-control" placeholder="Lastname" value="{{ $user->lastname }}">
