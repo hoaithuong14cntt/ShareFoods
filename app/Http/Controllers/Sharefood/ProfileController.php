@@ -172,6 +172,17 @@ class ProfileController extends Controller
             dd("co loi");
         }
 
-        return redirect()->route('sharefood.profile.index', ['user' => Auth::user()->id]);
+        return redirect()->route('sharefood.profile.placeOfStaff');
+    }
+
+    public function deletePlaceOfStaff(Place $place)
+    {
+        if (!empty($place)) {
+            if ($place->delete()) {
+                return redirect()->route('sharefood.profile.placeOfStaff');
+            }
+        } else {
+            return 'co loi xay ra';
+        }
     }
 }
