@@ -29,7 +29,7 @@
         <td>{{$value->id}}</td>
         <td>{{ $value->name }}</td>
         <td><img src="{{ $value->image }}" alt="" class="image-index"></td>
-		<td>{{ $value->discount }}</td>
+		    <td>{{ $value->discount }}</td>
         <td>
           <span class="label label-success">{!!published($value->is_published)!!}</span>
         </td>
@@ -37,9 +37,6 @@
         <td>
           <a class="btn btn-success" href="{{ route('admin.users.show', ['user' => $value->id]) }}">
           <i class="fa fa-search-plus "></i>
-          </a>
-          <a class="btn btn-info" href="table.html#">
-          <i class="fa fa-edit "></i>
           </a>
           <a class="btn btn-danger" href="{{ route('admin.users.destroy', ['user' => $value->id]) }}">
           <i class="fa fa-trash-o "></i>

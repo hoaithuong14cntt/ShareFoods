@@ -13,6 +13,8 @@ Route::group(['middleware' => 'auth', 'as' => 'admin.'], function () {
         Route::get('/', ['as' => 'index', 'uses' => 'StaffController@index']);
         Route::get('{staff}', ['as' => 'show', 'uses' => 'StaffController@show'])->where('staff', '[0-9]+');
         Route::get('{staff}/delete', ['as' => 'destroy', 'uses' => 'StaffController@destroy'])->where('staff', '[0-9]+');
+        Route::get('{staff}/edit', ['as' => 'edit', 'uses' => 'StaffController@edit'])->where('staff', '[0-9]+');
+        Route::post('{staff}/update', ['as' => 'update', 'uses' => 'StaffController@update'])->where('staff', '[0-9]+');
     });
 
     Route::group(['prefix' => 'places', 'as' => 'places.'], function () {

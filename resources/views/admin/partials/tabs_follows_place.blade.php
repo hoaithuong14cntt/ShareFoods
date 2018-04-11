@@ -34,9 +34,6 @@
           <a class="btn btn-success" href="{{ route('admin.users.show', ['user' => $value->id]) }}">
           <i class="fa fa-search-plus "></i>
           </a>
-          <a class="btn btn-info" href="table.html#">
-          <i class="fa fa-edit "></i>
-          </a>
           <a class="btn btn-danger" href="{{ route('admin.users.destroy', ['user' => $value->id]) }}">
           <i class="fa fa-trash-o "></i>
           </a>
