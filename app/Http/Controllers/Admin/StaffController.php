@@ -73,6 +73,7 @@ class StaffController extends Controller
             'phone' => 'max:13',
             'prefecture_id' => '',
             'memo' => '',
+            'type' => 'in:1,2,3',
         ];
 
         $validator = validator(request()->all(), $rules);
@@ -93,6 +94,7 @@ class StaffController extends Controller
             'phone',
             'prefecture_id',
             'memo',
+            'type',
         ]);
 
         if (request()->has('avatar')) {
@@ -119,6 +121,6 @@ class StaffController extends Controller
             dd('co loi');
         }
 
-        return redirect()->route('admin.staffs.show', ['staff' => $staff->id]);
+        return redirect()->route('admin.users.show', ['user' => $staff->id]);
     }
 }

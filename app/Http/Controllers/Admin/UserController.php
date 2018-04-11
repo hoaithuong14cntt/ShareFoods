@@ -74,6 +74,7 @@ class UserController extends Controller
             'phone' => 'max:13',
             'prefecture_id' => '',
             'memo' => '',
+            'type' => 'in:1,2,3',
         ];
 
         $validator = validator(request()->all(), $rules);
@@ -94,6 +95,7 @@ class UserController extends Controller
             'phone',
             'prefecture_id',
             'memo',
+            'type',
         ]);
 
         if (request()->has('avatar')) {
