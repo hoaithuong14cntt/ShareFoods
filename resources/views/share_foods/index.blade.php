@@ -149,47 +149,6 @@
             <p class="underline"></p>
           </div>
           <div class="ctn-about ctn-products ctn-main">
-            <div class="col-md-8 col-md-push-2 class-three">
-              <div class="item-product col-md-4 col-xs-4 wow bounceInLeft">
-                <div class="wrp-item">
-                  <div class="img-product">
-                    <img class="img" src="share_foods/assets/img/about-us/h1.jpg" alt="">
-                  </div>
-                  <div class="ctn-product">
-                    <div class="info">
-                      <h3 class="name1"><span >Ông Quang</span></h3>
-                      <p class="address">Backend</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="item-product col-md-4 col-xs-4 wow bounceInLeft">
-                <div class="wrp-item">
-                  <div class="img-product">
-                    <img class="img" src="share_foods/assets/img/about-us/h2.jpg" alt="">
-                  </div>
-                  <div class="ctn-product">
-                    <div class="info">
-                      <h3 class="name2"><span >Thanh Sơn</span></h3>
-                      <p class="address">Backend</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="item-product col-md-4 col-xs-4 wow bounceInLeft">
-                <div class="wrp-item">
-                  <div class="img-product">
-                    <img class="img" src="share_foods/assets/img/about-us/h3.jpg" alt="">
-                  </div>
-                  <div class="ctn-product">
-                    <div class="info">
-                      <h3 class="name3"><span>Quốc Đạt</span></h3>
-                      <p class="address">Backend</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
             <div class="col-md-6 col-md-push-3 class-two">
               <div class="item-product col-md-6 col-xs-4 wow bounceInLeft">
                 <div class="wrp-item">

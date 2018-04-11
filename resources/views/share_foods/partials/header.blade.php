@@ -48,17 +48,20 @@
       </div>
     </div>
   </div>
+  @php
+    $currentRouteName = Route::currentRouteName();
+  @endphp
   <nav class="navbar" role="navigation" data-spy="affix" data-offset-top="57">
     <div class="container">
       <div class="row">
         <div class="collapse navbar-collapse header-navbar">
           <ul class="nav navbar-nav ">
-            <li class="item-menu active"><a href="{{ route('sharefood.index') }}">home</a></li>
+            <li class="item-menu @if ($currentRouteName == 'sharefood.index') active @endif"><a href="{{ route('sharefood.index') }}">home</a></li>
             <li class="item-menu"><a href="#interested">interested</a></li>
             <li class="item-menu"><a href="#news">news</a></li>
             <li class="item-menu"><a href="#aboutUs">about us</a></li>
-            <li class="item-menu"><a href="{{ route('sharefood.contact') }}">contact</a></li>
-            <li class="item-menu"><a href="{{ route('sharefood.search') }}">search</a></li>
+            <li class="item-menu @if ($currentRouteName == 'sharefood.contact') active @endif"><a href="{{ route('sharefood.contact') }}">contact</a></li>
+            <li class="item-menu @if ($currentRouteName == 'sharefood.searchAll') active @endif"><a href="{{ route('sharefood.search') }}">search</a></li>
           </ul>
         </div>
       </div>
