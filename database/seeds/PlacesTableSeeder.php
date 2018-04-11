@@ -34,7 +34,7 @@ class PlacesTableSeeder extends Seeder
                 'to_price' => rand(400000, 1000000),
                 'start_time' => Carbon::now(),
                 'end_time' => Carbon::now(),
-                'discount' => 10,
+                'discount' => rand(10, 99),
                 'description' => $faker->text,
                 'content' => $faker->text,
                 'address' => $faker->address,

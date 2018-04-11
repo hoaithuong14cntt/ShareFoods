@@ -20,11 +20,13 @@
             <div class="col-md-5 col-xs-5 image">
               <div class="wrp">
                 <img src="{{ $place->image }}" alt="">
+                @if($place->discount != 0)
                 <div class="ribbon">
                   <p>
                     <span>Sale</span> {{ $place->discount }}%
                   </p>
                 </div>
+                @endif
                 @php
                   if(Auth::user()) {
                     $check = \Auth::user()->notes()->where('place_id',$place->id)->first();
@@ -60,6 +62,11 @@
                   {{csrf_field()}}
                     <div class="item-feature save">
                       <div class="form-group">
+                        @if(!empty($check))
+                        <input type="hidden" name="check_save" value="1">
+                        @else
+                        <input type="hidden" name="check_save" value="0">
+                        @endif
                         <input type="hidden" name="place_id" value="{{ $place->id }}">
                         <input type="submit" class=" btn btn-bg" name="save" value="Save" />
                       </div>
