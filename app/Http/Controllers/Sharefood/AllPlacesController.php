@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers\Sharefood;
 
+use App\Category;
 use App\Comment;
 use App\Http\Controllers\Controller;
 use App\Place;
+use App\Prefecture;
 use App\Save;
 use Auth;
 use Illuminate\Http\Request;
