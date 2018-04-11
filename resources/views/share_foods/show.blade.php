@@ -52,7 +52,7 @@
                   <div class="clearfix"> </div>
                 </div>
                 <p class="item address "><i class="fa fa-location-arrow"></i>{{ $place->address }}</p>
-                <p class="item price "><i class="fa fa-tag"></i>50.000 - 100.000</p>
+                <p class="item price "><i class="fa fa-tag"></i>{{ number_format($place->from_price) }} - {{ number_format($place->to_price) }}</p>
                 <p class="item phone "><i class="fa fa-phone"></i>{{ $place->phone }}</p>
                 <p class="item time "><i class="fa fa-clock-o"></i>{{ $place->start_time }} - {{ $place->end_time }}</p>
                 <div class="item features">

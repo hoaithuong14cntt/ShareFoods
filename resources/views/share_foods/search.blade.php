@@ -45,6 +45,19 @@
                             </select>
                           </div>
                         </li>
+                        <li class="type item-three item">
+                          <div class="form-group wrp-item">
+                            <select class="form-control" id="" name=" to_price">
+                              <option value="0" >Price</option>
+                              <option value="250000" >250.000</option>
+                              <option value="500000" >500.000</option>
+                              <option value="800000" >800.000</option>
+                              <option value="1000000" >1000.000</option>
+                              <option value="2000000" >2000.000</option>
+                              <option value="5000000" >5000.000</option>
+                            </select>
+                          </div>
+                        </li>
                         <li class="button-search item-three item">
                           <div class="wrp-item">
                             <div>

@@ -15,6 +15,11 @@ class PlacesTableSeeder extends Seeder
         $faker = Faker\Factory::create();
         $limit = 50;
 
+        $images = [];
+        for ($i = 0; $i < 10; $i++) {
+            $images[] = generateStorageImage($faker);
+        }
+
         for ($i = 0; $i < $limit; $i++) {
             DB::table('places')->insert([
                 'user_id' => $faker->randomElement(App\Staff::all()->pluck('id')->toArray()),
@@ -22,11 +27,11 @@ class PlacesTableSeeder extends Seeder
                 'prefecture_id' => $faker->randomElement(App\Prefecture::all()->pluck('id')->toArray()),
                 'name' => $faker->company,
                 'phone' => '0901234567',
-                'image' => $faker->image('public/storage/', 400, 300, null, false),
+                'image' => $faker->randomElement($images),
                 'lat' => '16.0868429',
                 'lng' => '108.21352',
-                'from_price' => '20000',
-                'to_price' => '50000',
+                'from_price' => rand(10000, 400000),
+                'to_price' => rand(400000, 1000000),
                 'start_time' => Carbon::now(),
                 'end_time' => Carbon::now(),
                 'discount' => 10,

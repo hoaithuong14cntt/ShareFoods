@@ -39,6 +39,7 @@ class HomeController extends Controller
         $keyword = $request->keyword;
         $prefecture_id = $request->prefecture_id;
         $category_id = $request->category_id;
+        $to_price = $request->to_price;
 
         $places = Place::where('is_published', 1);
 
@@ -51,6 +52,12 @@ class HomeController extends Controller
         if (0 != $prefecture_id) {
             $places->where(function ($query) use ($prefecture_id) {
                 $query->where('prefecture_id', $prefecture_id);
+            });
+        }
+
+        if (0 != $to_price) {
+            $places->where(function ($query) use ($to_price) {
+                $query->where('to_price', '<', $to_price);
             });
         }
 
