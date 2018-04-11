@@ -25,7 +25,7 @@
             <div class="item-infor col-md-4 col-xs-4">
               <span><i class="fa fa-envelope"></i></span>
               <div class="text">
-                <p>mail</p>
+                <p>thuong.hth@neo-lab.vn</p>
               </div>
             </div>
             <div class="clearfix"></div>

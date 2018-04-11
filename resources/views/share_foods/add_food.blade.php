@@ -19,7 +19,7 @@
                       <label class="control-label col-sm-3">Name of Food:</label>
                       <div class="col-sm-9 show-username">
                         <input type="hidden" name="place_id" value="{{ $place_id }}">
-                        <input type="text" class="form-control" name="name" id="inputFirstName" placeholder="Name of food" value="Rau muong chien" required>
+                        <input type="text" class="form-control" name="name" id="inputFirstName" placeholder="Name of food" value="" required>
                       </div>
                       <div class="clearfix"></div>
                     </div>
@@ -28,7 +28,7 @@
                     <div class="form-group first-name">
                       <label class="control-label col-sm-3" for="inputFirstName">Price:</label>
                       <div class="col-sm-9">
-                        <input type="text" class="form-control" name="price" id="inputFirstName" placeholder="ADdress" value="10000" required>
+                        <input type="text" class="form-control" name="price" id="inputFirstName" placeholder="Address" value="" required>
                         <div class="help-block with-errors"></div>
                       </div>
                       <div class="clearfix"></div>
@@ -48,7 +48,7 @@
                     <div class="form-group email">
                       <label class="control-label col-sm-3" for="inputEmail">Description:</label>
                       <div class="col-sm-9">
-                        <input type="text" class="form-control" id="inputEmail" name="description" placeholder="Description" value="fdhbdfhd" required>
+                        <input type="text" class="form-control" id="inputEmail" name="description" placeholder="Description" value="" required>
                         <div class="help-block with-errors"></div>
                       </div>
                       <div class="clearfix"></div>
@@ -58,7 +58,7 @@
                     <div class="form-group email">
                       <label class="control-label col-sm-3" for="inputEmail">Content:</label>
                       <div class="col-sm-9">
-                        <textarea rows="4" cols="50" class="form-control" name="content">dhbfdbh</textarea>
+                        <textarea rows="4" cols="50" class="form-control" name="content"></textarea>
                         <div class="help-block with-errors"></div>
                       </div>
                       <div class="clearfix"></div>

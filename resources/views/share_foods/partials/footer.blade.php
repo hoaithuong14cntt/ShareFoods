@@ -7,15 +7,15 @@
         </div>
         <div class="col-md-4 col-xs-4 item_footer au">
           <h3>About Us</h3>
-          <p>This year our eatery has been acknowledged as the Best National Restaurant of 2015. Such a prestigious award widens the list of our prizes that we’ve earned.</p>
+          <p>We created this website to provide users with a convenient location search solution.</p>
         </div>
         <div class="col-md-4 col-xs-4 item_footer cu">
           <h3>Contact Us</h3>
           <div class="ctn_item">
-            <p>Địa chỉ: 193 Nguyễn Lương Bằng, Đà Nẵng</p>
-            <p>SĐT: 0905594382</p>
-            <p>Email: <a href="">pinksky@gmail.com</a></p>
-            <p>Website: <a href="">http://pinksky.com</a></p>
+            <p>Địa chỉ: 344 Đường 2 tháng 9, quận Hải Châu, Đà Nẵng.</p>
+            <p>SĐT: 0905674086</p>
+            <p>Email: <a href="">thuong.hth@neo-lab.vn</a></p>
+            <p>Website: <a href="">http://sharefood.com</a></p>
           </div>
           <div class="social">
             <div class="item col-md-3 col-xs-3"><a href=""><i class="fa fa-facebook"></i></a></div>
