@@ -15,6 +15,12 @@ class UsersTableSeeder extends Seeder
     {
         $faker = Faker\Factory::create();
         $limit = 50;
+
+        $images = [];
+        for ($i = 0; $i < 10; $i++) {
+            $images[] = generateStorageImage($faker);
+        }
+
         for ($i = 0; $i < $limit; $i++) {
             DB::table('users')->insert([
                 'email' => $faker->unique()->email,
@@ -26,7 +32,7 @@ class UsersTableSeeder extends Seeder
                 'prefecture_id' => $faker->randomElement(Prefecture::all()->pluck('id')->toArray()),
                 'address' => $faker->address,
                 'memo' => $faker->text,
-                'avatar' => $faker->image('public/storage/', 400, 300, null, false),
+                'avatar' => $faker->randomElement($images),
                 'phone' => '0905123456',
                 'status' => rand(0, 1),
                 'type' => rand(1, 3),
