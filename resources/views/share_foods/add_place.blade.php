@@ -174,7 +174,7 @@
                   <div class="row">
                     <div class="form-group edit">
                       <div class="col-md-12">
-                        <button type="submit" class="btn btn-bg pull-right">Edit</button>
+                        <button type="submit" class="btn btn-bg pull-right">Create</button>
                       </div>
                       <div class="clearfix"></div>
                     </div>

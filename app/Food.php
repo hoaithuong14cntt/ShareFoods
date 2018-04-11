@@ -7,6 +7,9 @@ use Storage;
 
 class Food extends Model
 {
+
+    protected $fillable = ['place_id', 'image', 'name', 'description', 'content', 'price'];
+
     public function getImageAttribute($value)
     {
         if (empty($value)) {
