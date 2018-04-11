@@ -50,15 +50,19 @@ class AllPlacesController extends Controller
                 ['place_id', '=', $request->place_id],
             ])->get();
 
-            if (!$check->first()) {
-                $place = Place::find($request->place_id);
+            $place = Place::find($request->place_id);
 
-                $place->saves()->attach(Auth::user()->id);
-
-                return redirect()->route('sharefood.show', ['place' => $place->id]);
+            if (0 == $request->check_save) {
+                if (!$check->first()) {
+                    $place->saves()->attach(Auth::user()->id);
+                }
             } else {
-                dd('Da ton tai');
+                if ($check->first()) {
+                    $place->saves()->detach(Auth::user()->id);
+                }
             }
+
+            return redirect()->route('sharefood.show', ['place' => $place->id]);
         }
     }
 

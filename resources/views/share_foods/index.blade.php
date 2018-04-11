@@ -79,11 +79,13 @@
                     <div class="clearfix"></div>
                   </div>
                 </div>
+                @if($placeInterested->discount != 0)
                 <div class="ribbon">
                   <p>
-                    <span>Sale</span> 50%
+                    <span>Sale</span> {{ $placeInterested->discount }}%
                   </p>
                 </div>
+                @endif
               </div>
             </div>
           @endforeach
@@ -129,6 +131,13 @@
                     <div class="clearfix"></div>
                   </div>
                 </div>
+                @if($placeNew->discount != 0)
+                <div class="ribbon">
+                  <p>
+                    <span>Sale</span> {{ $placeNew->discount }}%
+                  </p>
+                </div>
+                @endif
               </div>
             </div>
           @endforeach
