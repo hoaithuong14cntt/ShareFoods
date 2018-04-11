@@ -5,6 +5,8 @@ Route::group(['middleware' => 'auth', 'as' => 'admin.'], function () {
         Route::get('/', ['as' => 'index', 'uses' => 'UserController@index']);
         Route::get('{user}', ['as' => 'show', 'uses' => 'UserController@show'])->where('user', '[0-9]+');
         Route::get('{user}/delete', ['as' => 'destroy', 'uses' => 'UserController@destroy'])->where('user', '[0-9]+');
+        Route::get('{user}/edit', ['as' => 'edit', 'uses' => 'UserController@edit'])->where('user', '[0-9]+');
+        Route::post('{user}/update', ['as' => 'update', 'uses' => 'UserController@update'])->where('user', '[0-9]+');
     });
 
     Route::group(['prefix' => 'staffs', 'as' => 'staffs.'], function () {

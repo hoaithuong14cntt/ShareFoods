@@ -38,7 +38,7 @@
                   <a class="btn btn-success" href="{{ route('admin.users.show', ['user' => $user->id]) }}">
                   <i class="fa fa-search-plus "></i>
                   </a>
-                  <a class="btn btn-info" href="table.html#">
+                  <a class="btn btn-info" href="{{ route('admin.users.edit', ['user' => $user->id]) }}">
                   <i class="fa fa-edit "></i>
                   </a>
                   <a class="btn btn-danger" href="{{ route('admin.users.destroy', ['user' => $user->id]) }}">
