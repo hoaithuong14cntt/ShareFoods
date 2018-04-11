@@ -35,6 +35,7 @@ Route::group(['namespace' => 'Sharefood', 'as' => 'sharefood.'], function () {
         Route::get('save/{user}', ['as' => 'save', 'uses' => 'ProfileController@save'])->where('user', '[0-9]+');
         Route::get('create_place', ['as' => 'createPlace', 'uses' => 'ProfileController@createPlace']);
         Route::post('create_place', ['as' => 'storePlace', 'uses' => 'ProfileController@storePlace']);
+        Route::get('place_of_staff', ['as' => 'placeOfStaff', 'uses' => 'ProfileController@placeOfStaff']);
     });
 
     Route::post('save', ['as' => 'save', 'uses' => 'AllPlacesController@save']);

@@ -6,6 +6,7 @@ use App\Category;
 use App\Http\Controllers\Controller;
 use App\Place;
 use App\Prefecture;
+use App\Staff;
 use App\User;
 use Auth;
 use Illuminate\Http\Request;
@@ -90,6 +91,14 @@ class ProfileController extends Controller
         }
 
         return redirect()->route('sharefood.profile.index', ['user' => $user->id]);
+    }
+
+    public function placeOfStaff()
+    {
+        $staff = Staff::find(Auth::user()->id);
+        $places = $staff->places()->orderBy('created_at', 'DESC')->paginate();
+
+        return view('share_foods.place_of_staff', compact('places'));
     }
 
     public function createPlace()

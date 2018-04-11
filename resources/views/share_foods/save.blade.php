@@ -26,7 +26,9 @@
                       <li><a href="{{ route('sharefood.profile.index', ['user' => $user->id]) }}"><i class="fa fa-pencil-square-o"></i>Edit</a></li>
                       <li><a href="{{ route('sharefood.profile.changePassword', ['user' => $user->id]) }}"><i class="fa fa-user"></i>Password</a></li>
                       <li class="active"><a href="{{ route('sharefood.profile.save', ['user' => $user->id]) }}"><i class="fa fa-bookmark"></i>Saved</a></li>
-                      <li><a href="{{ route('sharefood.profile.createPlace') }}"><i class="fa fa-bookmark"></i>Create Place</a></li>
+                      @if(Auth::user()->type == \App\User::TYPES['staff'])
+                      <li><a href="{{ route('sharefood.profile.placeOfStaff') }}"><i class="fa fa-bookmark"></i>Your Place</a></li>
+                      @endif
                     </ul>
                   </nav>
                 </div>
