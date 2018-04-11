@@ -26,6 +26,7 @@
                       <li class="active"><a href="{{ route('sharefood.profile.index', ['user' => $user->id]) }}"><i class="fa fa-pencil-square-o"></i>Edit</a></li>
                       <li><a href="{{ route('sharefood.profile.changePassword', ['user' => $user->id]) }}"><i class="fa fa-user"></i>Password</a></li>
                       <li><a href="{{ route('sharefood.profile.save', ['user' => $user->id]) }}"><i class="fa fa-bookmark"></i>Saved</a></li>
+                      <li><a href="{{ route('sharefood.profile.createPlace') }}"><i class="fa fa-bookmark"></i>Create Place</a></li>
                     </ul>
                   </nav>
                 </div>
@@ -40,7 +41,7 @@
                     <div class="form-group username">
                       <label class="control-label col-sm-3">Email:</label>
                       <div class="col-sm-9 show-username">
-                        <input type="text" class="form-control" name="email" id="inputFirstName" placeholder="First name" value="{{ $user->email }}" required>
+                        <input type="text" class="form-control" name="email" id="inputFirstName" placeholder="Email" value="{{ $user->email }}" required>
                       </div>
                       <div class="clearfix"></div>
                     </div>
@@ -89,7 +90,7 @@
                     <div class="form-group email">
                       <label class="control-label col-sm-3" for="inputEmail">Gender:</label>
                       <div class="col-sm-9">
-                        <input type="text" class="form-control" id="inputEmail" name="gender" placeholder="Email" value="{{ $user->gender }}" required>
+                        <input type="text" class="form-control" id="inputEmail" name="gender" placeholder="Gender" value="{{ $user->gender }}" required>
                         <div class="help-block with-errors"></div>
                       </div>
                       <div class="clearfix"></div>

@@ -2,9 +2,12 @@
 
 namespace App\Http\Controllers\Sharefood;
 
+use App\Category;
 use App\Http\Controllers\Controller;
+use App\Place;
 use App\Prefecture;
 use App\User;
+use Auth;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Webpatser\Uuid\Uuid;
@@ -87,5 +90,79 @@ class ProfileController extends Controller
         }
 
         return redirect()->route('sharefood.profile.index', ['user' => $user->id]);
+    }
+
+    public function createPlace()
+    {
+        $categories = Category::all();
+        $prefectures = Prefecture::all();
+
+        return view('share_foods.add_place', compact('categories', 'prefectures'));
+    }
+
+    public function storePlace(Request $request)
+    {
+        $rules = [
+            'image' => 'required',
+            'name' => 'required',
+            'category_id' => 'required|exists:categories,id',
+            'prefecture_id' => 'required|exists:prefectures,id',
+            'lat' => 'required|numeric',
+            'lng' => 'required|numeric',
+            'start_time' => 'required|date_format:H:i',
+            'end_time' => 'required|date_format:H:i|after:start_time',
+            'from_price' => 'required',
+            'to_price' => 'required',
+            'discount' => 'required|numeric',
+            'phone' => 'required|max:13',
+            'description' => '',
+            'content' => '',
+            'address' => 'required',
+        ];
+
+        $validator = validator($request->all(), $rules);
+
+        if ($validator->fails()) {
+            return $validator->errors()->messages();
+        }
+
+        $input = $request->only([
+            'image',
+            'name',
+            'category_id',
+            'prefecture_id',
+            'lat',
+            'lng',
+            'start_time',
+            'end_time',
+            'from_price',
+            'to_price',
+            'discount',
+            'phone',
+            'description',
+            'content',
+            'address',
+        ]);
+
+        if ($request->has('image')) {
+            $image = $request->file('image');
+            $imageName = 'places/' . Uuid::generate()->string . '.' . strtolower($image->getClientOriginalExtension());
+            $fileUploaded = Storage::put($imageName, file_get_contents($image), 'public');
+
+            if ($fileUploaded) {
+                $input['image'] = $imageName;
+            }
+        }
+
+        $input['user_id'] = Auth::user()->id;
+        $input['is_published'] = Place::STATUS['unpublished'];
+
+        $place = Place::create($input);
+
+        if (!$place) {
+            dd("co loi");
+        }
+
+        return redirect()->route('sharefood.profile.index', ['user' => Auth::user()->id]);
     }
 }

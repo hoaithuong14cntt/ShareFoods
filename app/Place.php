@@ -12,6 +12,8 @@ class Place extends Model
         'published' => 1,
     ];
 
+    protected $fillable = ['user_id', 'category_id', 'prefecture_id', 'image', 'lat', 'lng', 'start_time', 'end_time', 'from_price', 'to_price', 'discount', 'name', 'phone', 'description', 'content', 'address'];
+
     protected static function boot()
     {
         parent::boot();
