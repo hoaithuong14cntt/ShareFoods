@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Sharefood;
 
 use App\Category;
+use App\Food;
 use App\Http\Controllers\Controller;
 use App\Place;
 use App\Prefecture;
@@ -184,5 +185,57 @@ class ProfileController extends Controller
         } else {
             return 'co loi xay ra';
         }
+    }
+
+    public function createFood(Place $place)
+    {
+        $place_id = $place->id;
+
+        return view('share_foods.add_food', compact('place_id'));
+    }
+
+    public function storeFood(Request $request)
+    {
+        $rules = [
+            'image' => 'required',
+            'name' => 'required',
+            'place_id' => 'required|exists:places,id',
+            'description' => '',
+            'content' => '',
+            'price' => 'required|numeric',
+        ];
+
+        $validator = validator($request->all(), $rules);
+
+        if ($validator->fails()) {
+            return $validator->errors()->messages();
+        }
+
+        $input = $request->only([
+            'image',
+            'name',
+            'place_id',
+            'description',
+            'content',
+            'price',
+        ]);
+
+        if ($request->has('image')) {
+            $image = $request->file('image');
+            $imageName = 'places/foods/' . Uuid::generate()->string . '.' . strtolower($image->getClientOriginalExtension());
+            $fileUploaded = Storage::put($imageName, file_get_contents($image), 'public');
+
+            if ($fileUploaded) {
+                $input['image'] = $imageName;
+            }
+        }
+
+        $food = Food::create($input);
+
+        if (!$food) {
+            dd("co loi");
+        }
+
+        return redirect()->route('sharefood.profile.placeOfStaff');
     }
 }

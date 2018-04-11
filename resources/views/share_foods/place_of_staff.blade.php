@@ -51,7 +51,7 @@
                         </div>
                         <div class="parameter">
                           <div class="col-md-4 col-xs-4">
-                            <a href=""><p href=""><i class="fa fa-plus-circle"></i>Add Food</p></a>
+                            <a href="{{ route('sharefood.profile.createFood', ['place' => $place->id]) }}"><p href=""><i class="fa fa-plus-circle"></i>Add Food</p></a>
                           </div>
                           <div class="col-md-4 col-xs-4">
                             <a href="{{ route('sharefood.profile.deletePlaceOfStaff', ['place' => $place->id]) }}"><p href=""><i class="fa fa-minus-circle"></i>Remove this place</p></a>
