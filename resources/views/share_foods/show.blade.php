@@ -58,20 +58,26 @@
                 <p class="item phone "><i class="fa fa-phone"></i>{{ $place->phone }}</p>
                 <p class="item time "><i class="fa fa-clock-o"></i>{{ $place->start_time }} - {{ $place->end_time }}</p>
                 <div class="item features">
-                  <form action="{{ route('sharefood.save') }}" method="POST">
-                  {{csrf_field()}}
-                    <div class="item-feature save">
+                  <div class="item-feature save">
+                    @if(!Auth::user())
                       <div class="form-group">
-                        @if(!empty($check))
-                        <input type="hidden" name="check_save" value="1">
-                        @else
-                        <input type="hidden" name="check_save" value="0">
-                        @endif
-                        <input type="hidden" name="place_id" value="{{ $place->id }}">
-                        <input type="submit" class=" btn btn-bg" name="save" value="Save" />
+                        <input data-toggle="modal" data-target="#modal-signUp" type="submit" class=" btn btn-bg" name="save" value="Save" />
                       </div>
-                    </div>
-                  </form>
+                    @else
+                      <form action="{{ route('sharefood.save') }}" method="POST">
+                      {{csrf_field()}}
+                        <div class="form-group">
+                          @if(!empty($check))
+                          <input type="hidden" name="check_save" value="1">
+                          @else
+                          <input type="hidden" name="check_save" value="0">
+                          @endif
+                          <input type="hidden" name="place_id" value="{{ $place->id }}">
+                          <input type="submit" class=" btn btn-bg" name="save" value="Save" />
+                        </div>
+                      </form>
+                    @endif
+                  </div>
                     <div class="item-feature rate">
                       <div class="form-group">
                         <a href="" class="btn btn-bg" data-toggle="modal" data-target="#modal-rating">Rate</a>
@@ -260,4 +266,10 @@
     </div>
   </div>
 </div>
+<script>
+const myLatLng = {
+  lat: <?php echo $place->lat; ?>,
+  lng: <?php echo $place->lng; ?>
+}
+</script>
 @endsection
