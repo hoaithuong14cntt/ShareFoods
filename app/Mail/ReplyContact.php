@@ -6,7 +6,7 @@ use Illuminate\Bus\Queueable;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 
-class SendMail extends Mailable
+class ReplyContact extends Mailable
 {
     use Queueable, SerializesModels;
 
@@ -15,11 +15,11 @@ class SendMail extends Mailable
      *
      * @return void
      */
-    public $contact;
+    public $content;
 
-    public function __construct($contact)
+    public function __construct($content)
     {
-        $this->contact = $contact;
+        $this->content = $content;
     }
 
     /**
@@ -29,7 +29,7 @@ class SendMail extends Mailable
      */
     public function build()
     {
-        return $this->from($this->contact['email'])->view('emails.contact')
-            ->with(['contact' => $this->contact]);
+        return $this->from("thuong.hth@neo-lab.vn")->view('emails.reply')
+            ->with(['content' => $this->content]);
     }
 }

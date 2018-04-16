@@ -24,14 +24,11 @@
                 <td>{{ $contacts->firstItem() +$key }}</td>
                 <td>{{$contact->user_id}}</td>
                 <td>{{ $contact->title }}</td>
-                <td><img src="{{ $contact->content }}" alt=""></td>
+                <td class="long-text">{{ $contact->content }}</td>
                 <td>{{ $contact->created_at }}</td>
                 <td>
-                  <a class="btn btn-success" href="table.html#">
-                  <i class="fa fa-search-plus "></i>
-                  </a>
-                  <a class="btn btn-info" href="table.html#">
-                  <i class="fa fa-edit "></i>
+                  <a class="btn btn-success" href="{{ route('admin.contacts.reply', ['user' => $contact->user_id]) }}">
+                  <i class="fa fa-reply "></i>
                   </a>
                   <a class="btn btn-danger" href="{{ route('admin.contacts.destroy', ['contact' => $contact->id]) }}">
                   <i class="fa fa-trash-o "></i>
