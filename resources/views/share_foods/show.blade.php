@@ -62,7 +62,7 @@
                   <div class="item-feature save">
                     @if(!Auth::user())
                       <div class="form-group">
-                        <input data-toggle="modal" data-target="#modal-signUp" type="submit" class=" btn btn-bg" name="save" value="Save" />
+                        <input data-toggle="modal" data-target="#modal-signIn" type="submit" class=" btn btn-bg" name="save" value="Save" />
                       </div>
                     @else
                       <form action="{{ route('sharefood.save') }}" method="POST">
@@ -79,11 +79,19 @@
                       </form>
                     @endif
                   </div>
+                    @if(Auth::user())
                     <div class="item-feature rate">
                       <div class="form-group">
                         <a href="" class="btn btn-bg" data-toggle="modal" data-target="#modal-rating">Rate</a>
                       </div>
                     </div>
+                    @else
+                    <div class="item-feature rate">
+                      <div class="form-group">
+                        <a href="" class="btn btn-bg" data-toggle="modal" data-target="#modal-signIn">Rate</a>
+                      </div>
+                    </div>
+                    @endif
                     <div id="modal-rating" class="modal fade" role="dialog">
                       <div class="modal-dialog">
                         <!-- Modal content-->
