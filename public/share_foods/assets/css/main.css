@@ -753,7 +753,7 @@ body {
     height: 0;
     overflow: hidden;
     padding-top: 60px;
-    width: 48%; }
+    width: 60%; }
     @media (max-width: 1199px) {
       #header .menu-top .logo .wrp-img {
         width: 50%; } }
@@ -771,10 +771,10 @@ body {
       #header .menu-top .logo .wrp-img {
         top: 0; } }
     #header .menu-top .logo .wrp-img img {
-      width: 100%;
-      height: auto;
+      width: 165px;
+      height: 36px;
       position: absolute;
-      top: 0;
+      top: 17px;
       bottom: 0;
       right: 0;
       left: 0; }

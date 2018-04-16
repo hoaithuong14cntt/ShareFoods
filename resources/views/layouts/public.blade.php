@@ -34,19 +34,19 @@
                         <h4 class="modal-title">Sign In</h4>
                     </div>
                     <div class="modal-body">
-                        <form action="{{ route('sharefood.auth.login') }}" data-toggle="validator" role="form" name="form" id="form-signIn" class="form-horizontal" enctype="multipart/form-data" method="POST">
+                        <form action="{{ route('sharefood.auth.login') }}" data-toggle="validator" role="form" name="form" class="form-horizontal" enctype="multipart/form-data" method="POST">
                             {{ csrf_field() }}
                             <div class="col-md-12 username">
                                 <div class="form-group item">
-                                    <label for="input-uerName">Email</label>
-                                    <input type="text" id="input-uername" name="email" class="form-control" required />
+                                    <label>Email</label>
+                                    <input type="text" name="email" class="form-control" required />
                                     <div class="underline"></div>
                                     <div class="help-block with-errors"></div>
                                 </div>
                             </div>
                             <div class="col-md-12 password">
                                 <div class="form-group item">
-                                    <label for="input-uerName">Password</label>
+                                    <label>Password</label>
                                     <input type="password" name="password" id="input-pass" class="form-control" data-minlength="6" required data-error="Mật khẩu ít nhất 6 kí tự" />
                                     <div class="underline"></div>
                                     <div class="help-block with-errors"></div>
@@ -86,7 +86,7 @@
                         <h4 class="modal-title">Forgot Password</h4>
                     </div>
                     <div class="modal-body">
-                        <form data-toggle="validator" role="form" name="form" id="form-signIn" class="form-horizontal" enctype="multipart/form-data" method="POST">
+                        <form data-toggle="validator" role="form" name="form" class="form-horizontal" enctype="multipart/form-data" method="POST">
                             <div class="col-md-12 username">
                                 <div class="form-group item">
                                     <label for="input-uerName">Username</label>
