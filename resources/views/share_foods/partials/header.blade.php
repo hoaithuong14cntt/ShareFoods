@@ -4,7 +4,7 @@
       <div class="row">
         <div class="logo col-md-3 col-xs-3">
           <div class="wrp-img">
-            <a href=""><img src="share_foods/assets/img/logo/logo2.png" alt=""></a>
+            <a href=""><img src="/share_foods/assets/img/logo/logo2.png" alt=""></a>
           </div>
         </div>
         <div class="top-right col-md-9 col-xs-9">
