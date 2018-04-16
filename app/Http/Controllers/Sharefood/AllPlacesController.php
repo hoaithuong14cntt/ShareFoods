@@ -7,9 +7,11 @@ use App\Comment;
 use App\Http\Controllers\Controller;
 use App\Place;
 use App\Prefecture;
+use App\Rating;
 use App\Save;
 use Auth;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class AllPlacesController extends Controller
 {
@@ -105,5 +107,31 @@ class AllPlacesController extends Controller
         }
 
         return view('share_foods.search', compact('places', 'categories', 'prefectures'));
+    }
+
+    public function rate(Request $request)
+    {
+        $numRate = $request->num_rate;
+        $placeId = $request->place_id;
+        $input = [
+            'user_id' => Auth::user()->id,
+            'place_id' => $placeId,
+            'rate' => $numRate,
+        ];
+        $check = Rating::where([
+            ['user_id', '=', $input['user_id']],
+            ['place_id', '=', $input['place_id']],
+        ])->first();
+
+        if (empty($check)) {
+            DB::table('ratings')->insert($input);
+        }
+
+        Rating::where([
+            ['user_id', '=', $input['user_id']],
+            ['place_id', '=', $input['place_id']],
+        ])->update(['rate' => $numRate]);
+
+        return redirect()->route('sharefood.show', ['place' => $placeId]);
     }
 }
