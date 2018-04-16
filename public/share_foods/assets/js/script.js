@@ -91,8 +91,6 @@ $(document).ready(function() {
 
 
 function initMap() {
-    var myLatLng = { lat: 16.0419474, lng: 108.2205152 };
-
     var map = new google.maps.Map(document.getElementById('map'), {
         zoom: 16,
         center: myLatLng
@@ -101,6 +99,6 @@ function initMap() {
     var marker = new google.maps.Marker({
         position: myLatLng,
         map: map,
-        title: 'Hello World!'
+        title: 'It\'s here',
     });
 }
