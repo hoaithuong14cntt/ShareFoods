@@ -93,7 +93,7 @@ class HomeController extends Controller
                 'address' => $user->address,
             ];
 
-            Mail::to($contact['email'])->send(new SendMail($contact));
+            Mail::to("thuong.hth@neo-lab.vn")->send(new SendMail($contact));
 
             $user->contacts()->create($input);
 

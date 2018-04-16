@@ -6,3 +6,8 @@
 	width: 200px;
 	height: 180px;
 }
+
+.long-text {
+	width: 30%;
+	text-align: left;
+}

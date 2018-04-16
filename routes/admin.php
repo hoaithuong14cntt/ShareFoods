@@ -25,6 +25,8 @@ Route::group(['middleware' => 'auth', 'as' => 'admin.'], function () {
 
     Route::group(['prefix' => 'contacts', 'as' => 'contacts.'], function () {
         Route::get('/', ['as' => 'index', 'uses' => 'ContactController@index']);
+        Route::get('/{user}', ['as' => 'reply', 'uses' => 'ContactController@reply'])->where('user', '[0-9]+');
+        Route::post('/send', ['as' => 'send', 'uses' => 'ContactController@send']);
         Route::get('{comment}/delete', ['as' => 'destroy', 'uses' => 'ContactController@destroy']);
     });
 });
