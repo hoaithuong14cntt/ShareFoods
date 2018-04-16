@@ -31,6 +31,11 @@ class Place extends Model
         });
     }
 
+    public function getRatingScoreAttribute()
+    {
+        return $this->users()->pluck("rate")->avg();
+    }
+
     public function favorites()
     {
         return $this->belongsToMany(User::class, 'favorites', 'favorited_id', 'user_id');
@@ -68,5 +73,10 @@ class Place extends Model
     public function notes()
     {
         return $this->belongsToMany(User::class, 'saves', 'place_id', 'user_id');
+    }
+
+    public function users()
+    {
+        return $this->belongsToMany(User::class, 'ratings', 'place_id', 'user_id');
     }
 }

@@ -57,6 +57,7 @@
                 <p class="item price "><i class="fa fa-tag"></i>{{ number_format($place->from_price) }} - {{ number_format($place->to_price) }}</p>
                 <p class="item phone "><i class="fa fa-phone"></i>{{ $place->phone }}</p>
                 <p class="item time "><i class="fa fa-clock-o"></i>{{ $place->start_time }} - {{ $place->end_time }}</p>
+                <p class="item time "><i class="fa fa-star"></i>{{ $place->rating_score }}</p>
                 <div class="item features">
                   <div class="item-feature save">
                     @if(!Auth::user())
@@ -93,11 +94,13 @@
                               <h4 class="modal-title">Rating</h4>
                             </div>
                             <div class="modal-body">
-                              <form role="form" name="form-rate" id="form-rate" class="form-horizontal" enctype="multipart/form-data" method="POST">
+                              <form action="{{ route('sharefood.rate') }}" role="form" name="form-rate" id="form-rate" class="form-horizontal" enctype="multipart/form-data" method="POST">
+                                {{ csrf_field() }}
                                 <div class="col-md-12">
                                   <div class="form-group item">
                                     <div class="rating"></div>
-                                    <input id="input-rate" type="text">
+                                    <input id="input-rate" name="num_rate" type="text">
+                                    <input  name="place_id" value="{{ $place->id }}" type="hidden">
                                   </div>
                                 </div>
                                 <div class="col-md-12">

@@ -1,7 +1,9 @@
 new WOW().init();
+
 $(window).load(function() {
     $(".se-pre-con").fadeOut("slow");;
 });
+
 $(document).on('ready', function() {
     $(".slider-ad").slick({
         dots: true,
@@ -37,6 +39,7 @@ $(document).on('ready', function() {
         ]
     });
 });
+
 $(document).ready(function() {
     var options = {
         max_value: 5,
@@ -75,16 +78,10 @@ $(document).ready(function() {
     $('.rotate-cw').click(function() {
         $('.image-editor').cropit('rotateCW');
     });
+    
     $('.rotate-ccw').click(function() {
         $('.image-editor').cropit('rotateCCW');
     });
-
-    // $('.export').click(function() {
-    //     var imageData = $('.image-editor').cropit('export');
-    //     // console.log(imageData);
-    //     // window.open(imageData);
-    //     alert(imageData);
-    // });
 
 });
 

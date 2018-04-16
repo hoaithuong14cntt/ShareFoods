@@ -42,4 +42,5 @@ Route::group(['namespace' => 'Sharefood', 'as' => 'sharefood.'], function () {
     });
 
     Route::post('save', ['as' => 'save', 'uses' => 'AllPlacesController@save']);
+    Route::post('rate', ['as' => 'rate', 'uses' => 'AllPlacesController@rate']);
 });
